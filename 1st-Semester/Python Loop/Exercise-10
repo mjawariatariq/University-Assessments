@@ -1,0 +1,7 @@
+sum_squares = 0
+
+for num in range(1, 6):
+
+    sum_squares += num ** 2
+
+print(f"The sum of the squares from 1 to 5 is: {sum_squares}")
