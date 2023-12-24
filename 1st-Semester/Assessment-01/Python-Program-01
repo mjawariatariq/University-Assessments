@@ -1,0 +1,21 @@
+num1=int(input("Enter a Integer:"))
+
+num2=int(input("Enter a Integer:"))
+
+'sum_of_square_if_odd(num1,num2)'
+
+if num1 % 2 != 0 and num2 % 2 != 0:
+
+   sum_of_square= num1**2 and num2**2
+
+   print(f"sum of square {num1} and {num2} is {sum_of_square}:")
+
+else:
+
+   print("calculation is not performed , Enter two Integer")
+
+num1=int(input("Enter a Integer:"))
+
+num2=int(input("Enter a Integer:"))
+
+calculate_sum_of_square_if_odd(num1,num2)
