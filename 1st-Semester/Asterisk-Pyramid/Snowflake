@@ -1,0 +1,27 @@
+size = int(input("Enter the size of the snowflake: "))
+
+for i in range(size):
+
+    print(' ' * (size - i - 1) + '*' * (2 * i + 1))
+
+for i in range(size - 2, -1, -1):
+
+    print(' ' * (size - i - 1) + '*' * (2 * i + 1))
+
+
+Output:
+Enter the size of the snowflake: 6
+
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+
+[Process completed - press Enter]
