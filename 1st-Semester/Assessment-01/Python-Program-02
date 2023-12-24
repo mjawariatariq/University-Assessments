@@ -1,0 +1,19 @@
+def calculate_factorial(number):
+
+    if number < 0:
+
+        print("Factorial is not defined for negative numbers.")
+
+    else:
+
+        factorial_result = 1
+
+        for i in range(1, number + 1):
+
+            factorial_result *= i
+
+        print(f"The factorial of {number} is: {factorial_result}")
+
+num = int(input("Enter a Factorial Number: "))
+
+calculate_factorial(num)
