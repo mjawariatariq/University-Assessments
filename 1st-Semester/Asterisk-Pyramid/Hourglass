@@ -1,0 +1,35 @@
+size = int(input("Enter the size of the hourglass: "))
+
+for i in range(size):
+
+    spaces = ' ' * i
+
+    stars = '*' * (2 * (size - i) - 1)
+
+    print(spaces + stars)
+
+for i in range(size - 2, -1, -1):
+
+    spaces = ' ' * i
+
+    stars = '*' * (2 * (size - i) - 1)
+
+    print(spaces + stars)
+
+
+Output:
+Enter the size of the hourglass: 6
+
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+
+[Process completed - press Enter]
