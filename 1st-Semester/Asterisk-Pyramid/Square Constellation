@@ -1,0 +1,19 @@
+def square_constellation(size):
+
+    for _ in range(size):
+
+        print('* ' * size)
+
+square_constellation(6)
+
+
+Output:
+
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+
+[Process completed - press Enter]
