@@ -1,0 +1,74 @@
+import speech_recognition as sr
+import pyttsx3
+import pywhatkit
+import datetime
+import webbrowser
+
+listener = sr.Recognizer()
+machine = pyttsx3.init()
+
+def talk(text):
+    machine.say(text)
+    machine.runAndWait()
+
+def input_instruction():
+    global instruction
+
+    try:
+        with sr.Microphone() as source:
+            print("Listening...")
+            talk('listening')
+            speech = listener.listen(source)
+        instruction = listener.recognize_google(speech)
+        instruction = instruction.lower()
+        if "jarvis" in instruction:
+            print(instruction)
+
+    except sr.UnknownValueError:
+        talk("Sorry, I didn't understand. Can you please say it again?")
+        instruction = input_instruction()
+
+    except sr.RequestError:
+        print("Speech recognition request failed.")
+    return instruction
+
+def play_Jarvis():
+    while True:
+        instruction = input_instruction()
+        print(instruction)
+
+        if "exit" in instruction:
+            talk("Exiting Jarvis.")
+            break  # Exit the loop if "exit" is said
+
+        if "play" in instruction:
+            song = instruction.replace('play', "")
+            talk("Playing " + song)
+            pywhatkit.playonyt(song)
+
+        elif 'time' in instruction:
+            current_time = datetime.datetime.now().strftime('%I:%M %p')
+            talk('Current time is ' + current_time)
+
+        elif 'date' in instruction:
+            current_date = datetime.datetime.now().strftime('%d/%m/%Y')
+            talk("Today's date is " + current_date)
+
+        elif 'hi jarvis how are you' in instruction:
+            talk('I am fine, how about you?')
+
+        elif 'open youtube' in instruction:
+            talk('Opening YouTube')
+            webbrowser.open('https://www.youtube.com/')
+
+        elif "what is your name" in instruction:
+            talk('I am Jarvis, your virtual friend')
+
+        elif "who assist you" in instruction:
+            talk('Jawaria is assisting me')
+
+        else:
+            talk("Sorry,I didn't understand, can you say it again?")
+
+if __name__ == "__main__":
+    play_Jarvis()
