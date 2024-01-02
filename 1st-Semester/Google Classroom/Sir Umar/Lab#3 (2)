@@ -1,0 +1,21 @@
+The operators that satisfy the associative property are addition and multiplication. 
+
+For addition, the associative property states that (a + b) + c is equal to a + (b + c).
+
+For multiplication, the associative property states that (a * b) * c is equal to a * (b * c).
+
+
+A = float(input("Enter the first number (A): "))
+B = float(input("Enter the second number (B): "))
+C = float(input("Enter the third number (C): "))
+
+addition_1 = A + (B + C)  # a + (b + c)
+addition_2 = (A + B) + C  # (a + b) + c
+multiplication_1 = A * (B * C)  # a * (b * c)
+multiplication_2 = (A * B) * C  # (a * b) * c
+
+print("Addition (a + (b + c)):", addition_1)
+print("Addition ((a + b) + c):", addition_2)
+print("Multiplication (a * (b * c)):", multiplication_1)
+print("Multiplication ((a * b) * c):", multiplication_2)
+
