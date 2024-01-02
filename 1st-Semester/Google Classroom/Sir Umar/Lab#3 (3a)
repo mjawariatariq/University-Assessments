@@ -1,0 +1,9 @@
+A = float(input(“Enter the first number (A): “))
+B = float(input(“Enter the second number (B): “))
+
+print(“A == B is”, A == B)
+print(“A != B is”, A != B)
+print(“A < B is”, A < B)
+print(“A > B is”, A > B)
+print(“A <= B is”, A <= B)
+print(“A >= B is”, A >= B)
