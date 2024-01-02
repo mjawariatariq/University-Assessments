@@ -1,0 +1,21 @@
+Marks = int(input(“Enter your obtained marks: “))
+
+If marks < 40:
+    Grade = “Fail”
+
+elif marks <= 50:
+    Grade = “D”
+
+elif marks <= 60:
+    Grade = “C”
+
+elif marks <= 70:
+    Grade = “B”
+
+elif marks <= 80:
+    Grade = “A”
+
+else:
+    Grade = “A-1”
+print(“Your grade is:”, grade)
+
