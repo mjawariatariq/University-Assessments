@@ -1,0 +1,103 @@
+What would be the output of the following Python code?
+a)
+a,b='red','blue'
+a,b=b,a
+print(a,b)
+b)
+a='10'
+print(a+a)
+str = 'Hello World!'
+print (str) 
+print (str[0]) 
+print (str[2:5]) 
+print (str[2:]) 
+print (str * 2) 
+print (str + "TEST")
+
+
+
+
+
+Part (1):
+
+a, b= ‘red’, ‘blue’
+a, b=b, a
+print (a, b)
+
+
+Output:
+a, b = blue red
+[Process complete – press Enter]
+
+
+Part (2):
+
+a=”10”
+result=(a+a)
+print (“result=”, result)
+
+
+Output:
+result=1010
+[Process complete – press Enter]
+Str = ‘Hello World!’
+
+
+Part (1):
+
+print (str)
+
+
+Output:
+Hello World!
+[Process complete – press Enter]
+
+
+Part (2):
+
+print (str [0])
+
+
+Output:
+H
+[Process complete – press Enter]
+
+
+Part (3):
+
+print (str [2:5])
+
+
+Output:
+Llo
+[Process complete – press Enter]
+
+
+Part (4):
+
+print (str [2:])
+
+
+Output:
+llo World!
+[Process complete – press Enter]
+
+
+Part (5):
+
+print (str * 2)
+
+
+Output:
+Hello World! Hello World!
+[Process complete – press Enter]
+
+
+Part (6):
+
+print (str + “Test”)
+
+
+Output:
+Hello World! Test
+[Process complete – press Enter]
