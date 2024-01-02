@@ -1,0 +1,9 @@
+Which statement will check if a is equal to b?
+A. if a = b:
+B. if a == b:
+C. if a === c:
+D. if a == b
+
+
+
+The correct option is B. if a == b:
