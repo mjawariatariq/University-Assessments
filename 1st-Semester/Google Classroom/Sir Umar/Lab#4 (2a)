@@ -1,0 +1,5 @@
+Character = input(“Enter a character: “)
+If character.lower() in [‘a’, ‘e’, ‘I’, ‘o’, ‘u’]:
+    print(“The entered character is a vowel!”)
+else:
+    print(“The entered character is a consonant!”)
