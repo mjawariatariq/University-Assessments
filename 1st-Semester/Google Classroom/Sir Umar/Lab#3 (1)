@@ -1,8 +1,8 @@
-#The addition and multiplication operators are commutative. For example, 2 + 3 is the same as 3 + 2, and 4 * 5
-#is the same as 5 * 4. On the other hand, subtraction and division are not commutative because the order of the
-#operands matter.For example, 5 - 3 is not the same as 3 - 5, and 10 / 2 is not the same as 2 / 10.
+The addition and multiplication operators are commutative. For example, 2 + 3 is the same as 3 + 2, and 4 * 5 is the same as 5 * 4.
 
-A+B = B+A and A*B=B*A is Communitive property. 
+On the other hand, subtraction and division are not commutative because the order of the operands matters. For example, 5 - 3 is not the same as 3 - 5, and 10 / 2 is not the same as 2 / 10.
+
+
 A = float(input(“Enter the first number (A): “))
 B = float(input(“Enter the second number (B): “))
 
