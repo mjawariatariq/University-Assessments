@@ -1,0 +1,27 @@
+Age = int(input(“Enter age: “))
+
+Employment_status = input(“Enter Employment Status: “)
+
+Marital_status = input(“Enter Marital Status: “)
+
+If age < 25:
+    print(“Not Allowed”)
+
+elif age < 40 and employment_status == “Unemployed” and marital_status == “unmarried”:
+
+    print(“Insurance is 1400 PKR/month”)
+elif age < 40 and employment_status == “Employed” and marital_status == “unmarried”:
+
+    print(“Insurance is 800 PKR/month”)
+elif age < 40 and employment_status == “Unemployed” and marital_status == “married”:
+
+    print(“Insurance is 1200 PKR/month”)
+elif age < 40 and employment_status == “Employed” and marital_status == “married”:
+
+    print(“Insurance is 1000 PKR/month”)
+elif age >= 40 and employment_status != “any” and marital_status != “any”:
+
+    print(“Insurance is 1500 PKR/month”)
+
+else:
+    print(“Insurance Plan”)
