@@ -1,0 +1,22 @@
+Num1 = float(input(“Enter the first number: “))
+Num2 = float(input(“Enter the second number: “))
+
+print(“a. Both numbers are positive:”, num1 > 0 and num2 > 0)
+
+print(“b. At least one number is positive:”, num1 > 0 or num2 > 0)
+
+print(“c. Both numbers are negative:”, num1 < 0 and num2 < 0)
+
+print(“d. At least one number is negative:”, num1 < 0 or num2 < 0)
+
+print(“e. Both numbers are even:”, num1 % 2 == 0 and num2 % 2 == 0)
+
+print(“f. At least one number is even:”, num1 % 2 == 0 or num2 % 2 == 0)
+
+print(“g. Both numbers are odd:”, num1 % 2 != 0 and num2 % 2 != 0)
+
+print(“h. At least one number is odd:”, num1 % 2 != 0 or num2 % 2 != 0)
+
+print(“i. Both numbers are multiples of 3:”, num1 % 3 == 0 and num2 % 3 == 0)
+
+print(“j. At least one number is a multiple of 3:”, num1 % 3 == 0 or num2 % 3 == 0)
