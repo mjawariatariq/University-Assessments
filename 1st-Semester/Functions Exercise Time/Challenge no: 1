@@ -1,3 +1,8 @@
 def calculate_rectangle_area(length, width):
+
     area = length * width
+
     return area
+
+result = calculate_rectangle_area(5, 8)
+print(result)
