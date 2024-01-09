@@ -1,0 +1,17 @@
+Predict the Output
+
+i = 97
+while i <= 121 :
+ print("{}-{}".format(chr(i-32),chr(i)))
+ i+=6
+
+
+Output:
+
+A-a
+G-g
+M-m
+S-s
+Y-y
+
+[Program finished]
