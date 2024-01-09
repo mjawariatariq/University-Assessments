@@ -1,0 +1,36 @@
+Write a program that prints only the odd numbers from 100 to 150.
+
+Ans:
+
+for num in range(100, 151):
+    if num % 2 != 0:
+        print(num)
+
+Output: 
+101
+103
+105
+107
+109
+111
+113
+115
+117
+119
+121
+123
+125
+127
+129
+131
+133
+135
+137
+139
+141
+143
+145
+147
+149
+
+[Program Finished]
