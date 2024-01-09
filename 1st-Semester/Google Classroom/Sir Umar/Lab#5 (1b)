@@ -3,6 +3,9 @@ Write Python code for a loop that runs infinitely. It only exits when the user p
 Ans:
 
 while True:
+
     user_input = input("Press 'q' to exit: ")
+
     if user_input.lower() == 'q':
+
         break
