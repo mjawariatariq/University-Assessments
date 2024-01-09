@@ -1,8 +1,11 @@
 Write a program that prints numbers from 100 to 150 on the screen.
 
 Ans: 
+
 for num in range(100, 151):
+
     Print(num)
+
 
 Output:
 100
