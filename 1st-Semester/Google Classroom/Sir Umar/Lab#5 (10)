@@ -1,0 +1,24 @@
+Write a program that prints Fibonacci series.
+
+Ans: 
+
+Num_terms = int(input(“Enter the number of terms in the Fibonacci series: “))
+
+A, b = 0, 1
+
+print(“Fibonacci series:”)
+
+for _ in range(num_terms):
+
+    print(a, end=” “)
+
+    A, b = b, a + b
+
+
+Output:
+
+Enter the number of terms in the Fibonacci series: 4
+Fibonacci series:
+0 1 1 2
+
+[Program finished]
