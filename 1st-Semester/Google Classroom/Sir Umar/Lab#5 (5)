@@ -1,0 +1,23 @@
+Write a program that when runs, reads input typed the user and quits only when user types a ‘quit’ character.
+
+Ans:
+
+While True:
+
+    User_input = input(“Type something (type ‘quit’ to exit): “)
+
+    if user_input.lower() == ‘quit’:
+
+        print(“Exiting program.”)
+
+        break
+
+    else:
+
+        print(f”You typed: {user_input}”)
+
+
+Output:
+Type something (type ‘quit’ to exit): quit
+Exiting program.
+[Program finished]
