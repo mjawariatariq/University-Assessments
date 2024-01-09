@@ -2,7 +2,6 @@ Write a program that prints the table of a number entered by the user using both
 
 Ans:
 
-
 For Loop
 Number = int(input(“Enter a number: “))
 
