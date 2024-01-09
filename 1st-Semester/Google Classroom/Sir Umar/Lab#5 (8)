@@ -1,0 +1,44 @@
+Write a program that prints divisible numbers of a given number.
+
+Ans:
+
+num = int(input("Enter a number: "))
+
+print(f"The numbers divisible by {num} are:")
+
+for i in range(1, 101):
+
+    if i % num == 0:
+
+        print(i)
+
+
+ Output:
+Enter a number: 4
+The numbers divisible by 4 are:
+4
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+52
+56
+60
+64
+68
+72
+76
+80
+84
+88
+92
+96
+100
+[Program finished]
