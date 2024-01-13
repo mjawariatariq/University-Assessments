@@ -1,0 +1,15 @@
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+
+celsius_temperature = float(input("Enter temperature in Celsius: "))
+
+
+if celsius_temperature <= 0:
+    print("It's freezing! Consider wearing warm clothing.")
+
+
+fahrenheit_temperature = celsius_to_fahrenheit(celsius_temperature)
+
+
+print(f"The temperature in Fahrenheit is: {fahrenheit_temperature:.2f}Â°F")
