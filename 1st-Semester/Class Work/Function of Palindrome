@@ -1,0 +1,16 @@
+def is_palindrome(word):
+
+    cleaned_word = ''.join(char.lower()
+
+ for char in word if char.isalnum())
+
+    return cleaned_word ==
+
+ cleaned_word[::-1]
+
+word1 = "level"
+word2 = "python"
+
+print(f"Is '{word1}' a palindrome? {is_palindrome(word1)}")
+
+print(f"Is '{word2}' a palindrome? {is_palindrome(word2)}")
