@@ -1,0 +1,20 @@
+Write a program that takes two sets as input and prints the union of the two sets.
+
+Output:
+
+set1_input = input("Enter elements of the first set separated by spaces: ")
+set1 = set1_input.split()
+
+
+set2_input = input("Enter elements of the second set separated by spaces: ")
+set2 = set2_input.split()
+
+
+set1 = set(set1)
+set2 = set(set2)
+
+
+union_set = set1.union(set2)
+
+
+print("Union of the two sets:", union_set)
