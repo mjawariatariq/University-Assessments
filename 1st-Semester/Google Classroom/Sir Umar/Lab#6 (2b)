@@ -1,0 +1,26 @@
+What is the difference between append and extend methods of a list?
+
+Answer:
+
+The `append` and `extend` methods in Python are both used to add elements to a list, but they differ in how they add those elements:
+
+1. `append`: This method adds a single element to the end of the list. It takes a single argument, which is the element to be added. If the element is a list, it will be added as a single element, not as individual elements.
+
+   Example:
+   ```python
+   my_list = [1, 2, 3]
+   my_list.append(4)
+   print(my_list)  # Output: [1, 2, 3, 4]
+   ```
+
+2. `extend`: This method adds all the elements from an iterable (such as a list, tuple, or another iterable) to the end of the list. It takes a single argument, which is the iterable whose elements are to be added to the list.
+
+   Example:
+   ```python
+   my_list = [1, 2, 3]
+   another_list = [4, 5, 6]
+   my_list.extend(another_list)
+   print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
+   ```
+
+In summary, `append` adds a single element to the end of the list, while `extend` adds all the elements from an iterable to the end of the list.
