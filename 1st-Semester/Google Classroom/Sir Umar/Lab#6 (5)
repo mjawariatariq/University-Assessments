@@ -1,0 +1,12 @@
+Generate a list of 50 integers. Write a program that iterates through the list and prints the square of each number if it's even, and the cube if it's odd.
+
+Output:
+
+integer_list = list(range(1, 51))
+
+for num in integer_list:
+    if num % 2 == 0:
+        print(f"Square of {num}: {num**2}")
+
+    else:
+        print(f"Cube of {num}: {num**3}")
