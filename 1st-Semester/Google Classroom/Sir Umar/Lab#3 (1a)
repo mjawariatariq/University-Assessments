@@ -1,0 +1,27 @@
+Using the input function, take two numbers from the user and store them in variables ‘A’ and ‘B’. Compute the values of performing all the arithmetic operations shown in Table -1 between A and B. Run the program multiple times with different input values. Observe the output. Which of the arithmetic operations commutative property? (Hint: An operation is commutative if the order of operands does not affect the  
+result e.g., a+b=b+a).
+
+
+Output:
+
+A = float(input(“Enter the first number (A): “))
+B = float(input(“Enter the second number (B): “))
+
+Addition = A + B
+Subtraction = A – B
+Multiplication = A * B
+Division = A / B
+Modulo = A % B
+Exponentiation = A ** B
+
+Print(“Addition:”, addition)
+
+Print(“Subtraction:”, subtraction)
+
+Print(“Multiplication:”, multiplication)
+
+Print(“Division:”, division)
+
+Print(“Modulo:”, modulo)
+
+Print(“Exponentiation:”, exponentiation)
