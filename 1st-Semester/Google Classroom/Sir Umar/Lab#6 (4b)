@@ -1,0 +1,12 @@
+Consider the code below:
+items=[3,45,66,5,90,101]
+items2=[55,77]
+items.remove(5)
+print(items)
+items.extend(items2)
+print(items.pop(6))
+What will be the output of the above code?
+
+Output:
+
+77
