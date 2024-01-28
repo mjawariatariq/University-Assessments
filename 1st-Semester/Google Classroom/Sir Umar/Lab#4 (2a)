@@ -1,3 +1,9 @@
+Write a program that asks for a character to be entered by the user. Then the 
+program checks whether the entered character is a vowel or consonant.
+
+
+Output:
+
 Character = input(“Enter a character: “)
 If character.lower() in [‘a’, ‘e’, ‘I’, ‘o’, ‘u’]:
     print(“The entered character is a vowel!”)
