@@ -1,0 +1,12 @@
+write which operators are commutative and which are not.
+
+Output:
+
+- Addition and multiplication are commutative operators.
+- Subtraction, division, modulo, and exponentiation are not commutative operators.
+Addition = A + B  # Commutative
+Subtraction = A - B  # Non-commutative
+Multiplication = A * B  # Commutative
+Division = A / B  # Non-commutative
+Modulo = A % B  # Commutative
+Exponentiation = A ** B  # Commutative
