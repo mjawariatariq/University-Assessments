@@ -1,0 +1,13 @@
+Write a program that generates a list of odd numbers from 1 to 1000, prints numbers and then prints the sum of numbers. 
+
+Output:
+
+odd_numbers = [num for num in range(1, 1001) if num % 2 != 0]
+
+
+print("Odd numbers from 1 to 1000:")
+print(odd_numbers)
+
+
+sum_odd_numbers = sum(odd_numbers)
+print("Sum of odd numbers:", sum_odd_numbers)
