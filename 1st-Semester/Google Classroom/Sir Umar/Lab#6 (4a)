@@ -1,0 +1,16 @@
+Create “lab6_4.py”. Create a tuple containing the names of 5 countries. Write a program that iterates 
+through the tuple and prints only the countries with a length greater than 7 characters.
+
+
+Output:
+
+
+countries = ('United States', 'Canada', 'Australia', 'Netherlands', 'Switzerland')
+
+
+print("Countries with a length greater than 7 characters:")
+
+for country in countries:
+    if len(country) > 7:
+
+        print(country)
