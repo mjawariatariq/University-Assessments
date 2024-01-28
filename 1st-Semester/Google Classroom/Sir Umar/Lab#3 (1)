@@ -1,4 +1,5 @@
-Using the input function, take two numbers from the user and store them in variables ‘A’ and ‘B’. Compute the values of performing all the arithmetic operations shown in Table -1 between A and B. Run the programmultiple times with different input values. Observe the output. Which of the arithmetic operations. 
+Using the input function, take two numbers from the user and store them in variables ‘A’ and ‘B’. Compute the values of performing all the arithmetic operations shown in Table -1 between A and B. Run the programmultiple times with different input values. Observe the output. Which of the arithmetic operations commutative property? (Hint: An operation is commutative if the order of operands does not affect the 
+result e.g., a+b=b+a).
 
 
 Output:
