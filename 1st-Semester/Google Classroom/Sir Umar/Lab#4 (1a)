@@ -1,3 +1,7 @@
+Write a program that inputs a number and then determines whether the entered number is odd, even or 0.
+
+Output:
+
 Number = int(input(“Enter a number: “))
 If number == 0:
     print(“The entered number is 0.”)
