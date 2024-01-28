@@ -1,0 +1,24 @@
+Write a Python program that takes a list of student names and their corresponding 
+grades as key-value pairs in a dictionary. The program should then prompt the user to enter a student 
+name, and it should output the grade associated with that student. If the student is not found in the 
+dictionary, the program should print a message saying "Student not found.
+
+
+Output:
+
+student_grades = {
+    'Alice': 85,
+    'Bob': 92,
+    'Charlie': 78,
+    'David': 88,
+    'Emma': 95
+}
+
+student_name = input("Enter student name: ")
+
+if student_name in student_grades:
+    
+    print(f"Grade of {student_name}: {student_grades[student_name]}")
+else:
+    
+    print("Student not found.")
