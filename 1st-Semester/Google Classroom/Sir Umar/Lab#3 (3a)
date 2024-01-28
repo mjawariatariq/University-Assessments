@@ -1,3 +1,9 @@
+Input two numbers from the user. Then, using the comparison operators from Table-1, print the results using print function for all the comparison 
+operations between both numbers. For example, you can print the result of equal operator (==) using the following print statement.print("A==B is",a==b)
+The above statement will print the result of a==b as either True or False.
+
+Output:
+
 A = float(input(“Enter the first number (A): “))
 B = float(input(“Enter the second number (B): “))
 
