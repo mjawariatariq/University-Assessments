@@ -4,6 +4,7 @@ b=a**0
 print(not(a<b and a==0))
 
 
+Output:
 
 False
 
