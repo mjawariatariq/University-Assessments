@@ -5,6 +5,7 @@ a += b**2
 print(not(a < 100) and (b > a))
 
 
+Output:
 
 False
 
