@@ -1,0 +1,15 @@
+Enlist the operators for lab task 2 that satisfy associative property.
+
+Output:
+
+In your provided code, the operations that satisfy the associative property are:
+
+1. Addition:
+   - `addition_1 = A + (B + C)`  # a + (b + c)
+   - `addition_2 = (A + B) + C`  # (a + b) + c
+
+2. Multiplication:
+   - `multiplication_1 = A * (B * C)`  # a * (b * c)
+   - `multiplication_2 = (A * B) * C`  # (a * b) * c
+
+These operations will produce the same result regardless of how the operands are grouped with parentheses. So, both addition and multiplication satisfy the associative property in this context.
