@@ -1,0 +1,26 @@
+Write a program that generates a list of 20 random numbers, prints the list and then finds the (1) largest number, and (2) smallest number using linear search method.
+
+Output:
+
+import random
+
+random_numbers = [random.randint(1, 100) for _ in range(20)]
+
+
+print("List of random numbers:")
+print(random_numbers)
+
+
+largest = random_numbers[0]
+smallest = random_numbers[0]
+
+
+for num in random_numbers:
+    if num > largest:
+        largest = num
+    if num < smallest:
+        smallest = num
+
+
+print("Largest number:", largest)
+print("Smallest number:", smallest)
