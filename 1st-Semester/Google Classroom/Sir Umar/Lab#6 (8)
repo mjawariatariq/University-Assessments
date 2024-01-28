@@ -1,0 +1,17 @@
+Write a program that randomly selects an item from list_1 and then maps it to a 
+randomly selected item of list_2.
+
+Output:
+
+import random
+
+list_1 = ['apple', 'banana', 'cherry', 'date', 'elderberry']
+list_2 = ['cat', 'dog', 'elephant', 'fox', 'giraffe']
+
+
+random_item_1 = random.choice(list_1)
+random_item_2 = random.choice(list_2)
+
+
+print("Randomly selected item from list_1:", random_item_1)
+print("Randomly selected item from list_2:", random_item_2)
