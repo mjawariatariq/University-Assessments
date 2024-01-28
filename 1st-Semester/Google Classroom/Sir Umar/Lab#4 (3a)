@@ -1,3 +1,17 @@
+Create “lab4_3.py”. Write a program that asks for a person’s age, employment status, marital status 
+and then determines the insurance plan according to the following table.
+Age Employment status Marital status Insurance plan.
+< 25 any any Not allowed.
+25-40 unemployed unmarried 1400 PKR / month.
+25-40 employed unmarried 800 PKR / month.
+25-40 unemployed married 1200 PKR / month.
+25-40 employed married 1000 PKR / month
+>40 any any 1500 PKR / month.
+
+
+
+Output:
+
 Age = int(input(“Enter age: “))
 
 Employment_status = input(“Enter Employment Status: “)
