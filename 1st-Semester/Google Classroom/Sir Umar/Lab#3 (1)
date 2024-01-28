@@ -1,7 +1,7 @@
-The addition and multiplication operators are commutative. For example, 2 + 3 is the same as 3 + 2, and 4 * 5 is the same as 5 * 4.
+Using the input function, take two numbers from the user and store them in variables ‘A’ and ‘B’. Compute the values of performing all the arithmetic operations shown in Table -1 between A and B. Run the programmultiple times with different input values. Observe the output. Which of the arithmetic operations. 
 
-On the other hand, subtraction and division are not commutative because the order of the operands matters. For example, 5 - 3 is not the same as 3 - 5, and 10 / 2 is not the same as 2 / 10.
 
+Output:
 
 A = float(input(“Enter the first number (A): “))
 B = float(input(“Enter the second number (B): “))
