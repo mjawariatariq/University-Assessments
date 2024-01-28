@@ -1,4 +1,4 @@
-Write the output of the following code
+Write the output of the following code.
 a = 25
 if a > 15:
  print("Hi")
