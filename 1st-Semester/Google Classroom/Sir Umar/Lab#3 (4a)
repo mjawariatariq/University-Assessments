@@ -1,3 +1,18 @@
+The program asks for two number from the user and then checks whether the numbers are:
+a. Positive
+b. Atleast one of them is positive
+c. Negative 
+d. Atleast one of them is negative
+e. Even 
+f. Atleast one of them is even
+g. Odd
+h. Atleast one of them is odd
+i. Multiple of 3 
+j. Atleast one of them is multiple of 3
+Use the print statement similar to the one shown in lab task 3 to display the result. 
+
+Output:
+
 Num1 = float(input(“Enter the first number: “))
 Num2 = float(input(“Enter the second number: “))
 
