@@ -1,0 +1,21 @@
+Write a program to manage a shopping list. Use variables to store item names, quantities, and prices. Calculate the total cost of items and check if you have enough budget.
+
+items_names = (input("Enter Items Name"))
+
+item_names = ('candy', 'scissor', 'glasses', 'shoes')
+
+price = [2.5, 2.6, 4.2, 6.2]
+
+quantity= [5, 1 , 2 , 2]
+
+budget = 5.0
+
+total_cost = sum(quantity * price for quantity, price in zip (quantity, price))
+
+if total_cost <= budget:
+
+print("You're in Budget")
+
+else:
+
+print("Out of Budget")
