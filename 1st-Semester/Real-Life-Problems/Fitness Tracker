@@ -1,4 +1,5 @@
-total_steps = int(input("Enter the steps:"))
+Create variables to store daily steps, distance walked, and calories burned. Write expressions to calculate average steps per week and total distance covered in a month. total_steps = int(input("Enter the steps:"))
+
 
 average_distance = int(input("Enter Distance:"))
 
