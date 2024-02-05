@@ -1,0 +1,22 @@
+Use variables to store genre, rating, and release year. Write expressions to compare movies and suggest matches.
+
+
+movies_name = (input("Enter a Movie Name:"))
+movie_name1 = "BahuBali"
+movie_name2 = "Orphan Sisters"
+movie_name3 = "Chalk and Duster"
+movie_name4 = "Three Idiots"
+
+store_genre = ["historical" , "horror" , "drama" , "funny"]
+ratings = [4.7 , 4.6 , 6.5 , 8.4]
+release_year = [2015 , 2008 , 2016 , 2009]
+
+if movies_name == 'BahuBali':
+    print("Fully Recommended")
+elif movies_name =='Orphan Sisters':
+        print("If you're brave than watch this because it is a horror movie")
+elif movies_name == 'Three_Idiots':
+    print("Recommended for which have good sense of humour")
+else:
+    print("Ahh! Not Recommended")
+    
