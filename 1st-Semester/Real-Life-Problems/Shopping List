@@ -1,4 +1,5 @@
-Write a program to manage a shopping list. Use variables to store item names, quantities, and prices. Calculate the total cost of items and check if you have enough budget.
+Use variables to store item names, quantities, and prices. Calculate the total cost of items and check if you have enough budget.
+
 
 items_names = (input("Enter Items Name"))
 
