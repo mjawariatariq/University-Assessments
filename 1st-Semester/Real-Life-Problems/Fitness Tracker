@@ -1,0 +1,11 @@
+total_steps = int(input("Enter the steps:"))
+
+average_distance = int(input("Enter Distance:"))
+
+days_in_month = 30
+
+average_steps_per_Week = (total_steps) / 7
+
+total_distance = (average_steps_per_Week) * (average_distance) * (days_in_month)
+
+print(total_distance)
