@@ -1,0 +1,30 @@
+Use variables to store task names and durations. Write expressions to calculate total time spent on each task and identify areas for improvement.
+
+
+tasks = {
+    "Task 1": 30,
+    "Task 2": 45,
+    "Task 3": 60,
+    "Task 4": 20
+}
+
+
+total_times = {task: duration for task, duration in tasks.items()}
+
+
+total_time = sum(total_times.values())
+
+
+average_time = total_time / len(tasks)
+areas_for_improvement = [task for task, duration in total_times.items() if duration > average_time]
+
+
+print("Total time spent on each task:")
+for task, duration in total_times.items():
+     print(f"{task}: {duration} minutes")
+
+
+print("\nTotal time spent on all tasks:", total_time, "minutes")
+
+
+print("\nAreas for improvement (tasks taking more than average time):", areas_for_improvement)
