@@ -1,0 +1,12 @@
+exam_score = int(input("Enter Exam Score:"))
+
+if exam_score >= 90:
+    print("Grade: A")
+elif 80 <= exam_score <= 89:
+    print("Grade: B")
+elif 70 <= exam_score <= 79:
+    print("Grade: C")
+elif 60 <= exam_score <= 69:
+    print("Grade: D")
+else:
+    print("Grade: F")
