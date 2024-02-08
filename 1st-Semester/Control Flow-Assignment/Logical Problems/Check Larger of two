@@ -1,0 +1,15 @@
+num1 = int(input("Enter a Number:"))  
+
+num2 = int(input("Enter a Number:")) 
+
+if num1>num2: 
+
+    print("Larger number is:", num1) 
+
+elif num2<num1: 
+
+    print("Larger number is:", num2) 
+
+else: 
+
+    print("Both are Equal") 
