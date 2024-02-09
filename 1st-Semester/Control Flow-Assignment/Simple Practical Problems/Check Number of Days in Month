@@ -1,0 +1,13 @@
+month = int(input("Enter the month number (1-12): "))
+
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+if 1 <= month <= 12:
+
+num_days = days_in_month[month - 1] 
+
+print("Number of days in month:", num_days)
+
+else:
+
+    print("Invalid month number")
