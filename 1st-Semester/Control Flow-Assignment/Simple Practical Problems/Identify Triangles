@@ -1,0 +1,12 @@
+triangle_side1= float(input("Enter Lenght of Triangle Side:"))
+triangle_side2 = float(input("Enter Lenght of Triangle Side:"))
+triangle_side3= float(input("Enter Lenght of Triangle Side:"))
+
+if triangle_side1 == triangle_side2 == triangle_side3:
+    print("This Triangle is Equilateral")
+
+elif triangle_side1 == triangle_side2 != triangle_side3:
+    print("This Triangle is Isosceles")
+
+else:
+    print("This Trangle is Scalene")
