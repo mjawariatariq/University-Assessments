@@ -1,0 +1,15 @@
+year = int(input("Enter the Year:"))
+
+month = int(input("Enter the Month:"))
+
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] 
+
+days_in_month = days_in_month[month - 1]
+
+if year%4==0:
+
+print(days_in_month)
+
+else:
+
+    print("Invalid")
