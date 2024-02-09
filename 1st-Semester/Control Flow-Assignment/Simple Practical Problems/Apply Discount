@@ -1,0 +1,16 @@
+price = int(input("Enter price:"))
+quantity = int(input("Enter quantity:"))
+
+total_price = price*quantity
+
+if total_price < 1000:
+
+    discount_price = total_price * 0.10
+
+    total_price -= discount_price
+
+    print("discount_price:", discount_price)
+
+else:
+
+    print("total_price:", total_price)
