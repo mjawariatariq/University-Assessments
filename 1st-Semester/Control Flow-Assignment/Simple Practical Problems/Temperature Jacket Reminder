@@ -1,0 +1,9 @@
+temperature_celsius = float(input("Enter Temperature in Celsius:")) 
+
+if temperature_celsius<20: 
+
+    print("Reminder: Wear a Jacket") 
+
+else: 
+
+    print("Temperature is Normal not neccessary to wear jacket") 
