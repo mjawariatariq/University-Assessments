@@ -1,1 +1,17 @@
+grading_scale = {'A': 90, 'B': 80, 'C': 70, 'D': 60, 'F': 0}
 
+def calculate_grade(scores):
+    total = sum(scores)
+    avg = total / len(scores)
+    for grade, score in grading_scale.items():
+        if avg >= score:
+            return grade
+
+num_subjects = int(input("Enter the number of subjects: "))
+subject_scores = []
+for i in range(num_subjects):
+    score = float(input(f"Enter score for subject {i+1}: "))
+    subject_scores.append(score)
+
+grade = calculate_grade(subject_scores)
+print("Overall grade:", grade)
