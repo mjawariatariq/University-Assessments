@@ -1,0 +1,16 @@
+student_name = (input('Enter Student Name:'))
+
+obtained_marks = {
+    'Jawaria' : 90,
+    'Haiqa' : 80,
+    'Zainab' : 70,
+    'Firza' : 60,
+    'Bushra' : 50,
+    'Hava' : 89,
+    'BiBi' : 87,
+    'Fatima' : 56,
+    'Sadia' : 98,
+    'Laiqa' : 99
+}
+
+print(obtained_marks[student_name])
