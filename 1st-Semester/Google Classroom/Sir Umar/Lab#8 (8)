@@ -1,0 +1,10 @@
+from datetime import datetime
+
+# Get the current date
+current_date = datetime.now()
+
+# Format the current date in "YYYY-MM-DD" format using the format() function
+formatted_date = current_date.strftime("%Y-%m-%d")
+
+# Print the formatted date
+print("Formatted current date:", formatted_date)
