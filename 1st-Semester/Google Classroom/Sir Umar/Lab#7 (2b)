@@ -1,0 +1,15 @@
+Consider a dictionary dates is declared as:
+dates={2000:"15.04.2020", 2001:"26.03.2001", 2002:"17.08.2002"}
+Write the code that changes the date items of the year 2002 to “20.05.2002”
+
+Input:
+
+dates = {2000: "15.04.2020", 2001: "26.03.2001", 2002: "17.08.2002"}
+
+dates[2002] = "20.05.2002"
+
+print(dates)
+
+Output:
+
+{2000: '15.04.2020', 2001: '26.03.2001', 2002: '20.05.2002'}
