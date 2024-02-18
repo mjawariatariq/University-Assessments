@@ -1,0 +1,17 @@
+To use a unique key for each record. This way, every student will be assigned a
+unique number and two students with same name can be added to the students_dict.
+
+students_dict = {}
+next_student_id = 1 
+
+def add_student(name):
+    global next_student_id  
+    students_dict[next_student_id] = name
+    print("Student", name, "added successfully with ID", next_student_id)
+    next_student_id += 1  # Increment the student ID counter for the next student
+
+add_student('Jawaria')
+add_student('Hava')
+add_student('Sadia')  
+
+print(students_dict)
