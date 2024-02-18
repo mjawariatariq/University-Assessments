@@ -1,0 +1,10 @@
+Which is the correct form of declaration of dictionary?
+a) day = {1: 'm', 2: 't', 3: 'w'}
+b) day = (1; 'm', 2; 't', 3; 'w')
+c) day = [1: 'm', 2: 't', 3: 'w']
+d) day = {1 'm', 2 't', 3 'w'}
+
+
+Output:
+
+a) day = {1: 'm', 2: 't', 3: 'w'}
