@@ -1,0 +1,25 @@
+conversion_factors = {'C to F': lambda c: c * 9/5 + 32,
+                      'F to C': lambda f: (f - 32) * 5/9}
+
+def convert_temperature(temp, conversion):
+    return conversion(temp)
+
+while True:
+    print("\nOptions:")
+    print("1. Convert Celsius to Fahrenheit")
+    print("2. Convert Fahrenheit to Celsius")
+    print("3. Quit")
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = convert_temperature(celsius, conversion_factors['C to F'])
+        print("Temperature in Fahrenheit:", fahrenheit)
+    elif choice == 2:
+        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+        celsius = convert_temperature(fahrenheit, conversion_factors['F to C'])
+        print("Temperature in Celsius:", celsius)
+    elif choice == 3:
+        break
+    else:
+        print("Invalid choice. Please try again.")
