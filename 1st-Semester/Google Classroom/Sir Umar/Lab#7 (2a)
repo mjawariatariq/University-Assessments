@@ -1,0 +1,19 @@
+Check for a duplicate key before saving a new item in the dictionary. In case anitem is already available in the students_dict, then the program should warn the user.
+
+students_dict = {
+    101: 'Jawaria',
+    105: 'Zainab',
+    108: 'Hava'
+}
+
+def add_student(id, name):
+    if id in students_dict:
+        print("Warning: Student with ID", id, "already exists.")
+    else:
+        students_dict[id] = name
+        print("Student added successfully.")
+
+add_student(101, 'Ali')  
+add_student(103, 'John')
+
+print(students_dict)
