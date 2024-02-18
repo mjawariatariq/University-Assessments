@@ -1,0 +1,39 @@
+# Initialize data
+car_ids = [1, 2, 3, 4, 5]
+car_names = {1: "Suzuki Cultus", 2: "Suzuki Alto", 3: "Toyota Corolla", 4: "Honda City", 5: "Honda Civic"}
+car_models = {1: 2020, 2: 2021, 3: 2020, 4: 2021, 5: 2020}
+car_rentals = {1: 2000, 2: 1500, 3: 3000, 4: 2500, 5: 3500}
+car_fuel = {1: 17, 2: 19, 3: 13, 4: 14, 5: 12}
+car_issued = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+
+def rent_car(car_id):
+    if car_id not in car_ids:
+        print("Invalid car ID.")
+        return
+    if car_issued[car_id] == 1:
+        print("Car is already rented out.")
+        return
+    customer_name = input("Enter customer name: ")
+    customer_cnic = input("Enter customer CNIC: ")
+    car_issued[car_id] = 1
+    print(f"Car {car_names[car_id]} rented successfully to {customer_name} (CNIC: {customer_cnic}).")
+
+def display_menu():
+    print("\nCar Rental Menu:")
+    print("ID  Name             Model  Rental (per day)")
+    for car_id in car_ids:
+        print(f"{car_id}: {car_names[car_id]:<16} {car_models[car_id]}    ${car_rentals[car_id]}")
+
+# Main program
+while True:
+    display_menu()
+    choice = input("\nEnter car ID to rent (or 'q' to quit): ")
+
+    if choice == 'q':
+        break
+    else:
+        try:
+            car_id = int(choice)
+            rent_car(car_id)
+        except ValueError:
+            print("Invalid input. Please enter a valid car ID or 'q' to quit.")
