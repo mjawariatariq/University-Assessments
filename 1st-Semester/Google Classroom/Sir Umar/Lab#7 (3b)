@@ -1,0 +1,12 @@
+Write the output of following code:
+
+Input:
+
+x = {1:10}
+d = {2:20, 3:30, 4:40}
+x.update(d)
+print(x)
+
+Output:
+
+{1: 10, 2: 20, 3: 30, 4: 40}
