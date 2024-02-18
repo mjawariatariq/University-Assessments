@@ -1,0 +1,8 @@
+# Take user input
+user_input = input("Enter a string: ")
+
+# Calculate the length of the input string using len() function
+length = len(user_input)
+
+# Print the length of the input string
+print("Length of the input string:", length)
