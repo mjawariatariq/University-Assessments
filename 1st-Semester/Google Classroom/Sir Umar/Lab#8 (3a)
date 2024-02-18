@@ -1,0 +1,8 @@
+# Define a list of numbers
+numbers = [5, 10, 15, 20, 25]
+
+# Calculate the sum of numbers using the sum() function
+total_sum = sum(numbers)
+
+# Print the sum
+print("Sum of numbers:", total_sum)
