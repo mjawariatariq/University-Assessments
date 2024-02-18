@@ -1,0 +1,27 @@
+# Dictionary containing username-password pairs
+user_credentials = {
+    'user1': 'password1',
+    'user2': 'password2',
+    'user3': 'password3'
+}
+
+def authenticate(username, password):
+    if username in user_credentials and user_credentials[username] == password:
+        return True
+    else:
+        return False
+
+# Main program
+def main():
+    while True:
+        username = input("Enter username: ")
+        password = input("Enter password: ")
+
+        if authenticate(username, password):
+            print("Welcome,", username)
+            break
+        else:
+            print("Incorrect username or password. Please try again.")
+
+if __name__ == "__main__":
+    main()
