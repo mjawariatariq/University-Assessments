@@ -1,0 +1,8 @@
+# Take user input
+user_input = input("Enter a value: ")
+
+# Determine the data type of the user input using the type() function
+data_type = type(user_input)
+
+# Print the data type of the user input
+print("Data type of the input value:", data_type)
