@@ -1,1 +1,24 @@
+shopping_list = {}
 
+def add_item(item):
+    shopping_list[item] = False
+    print(f"{item} added to the shopping list.")
+
+def remove_item(item):
+    if item in shopping_list:
+        del shopping_list[item]
+        print(f"{item} removed from the shopping list.")
+    else:
+        print(f"{item} not found in the shopping list.")
+
+def check_off_item(item):
+    if item in shopping_list:
+        shopping_list[item] = True
+        print(f"{item} checked off from the shopping list.")
+    else:
+        print(f"{item} not found in the shopping list.")
+
+def display_list():
+    print("Shopping List:")
+    for item, checked_off in shopping_list.items():
+        status
