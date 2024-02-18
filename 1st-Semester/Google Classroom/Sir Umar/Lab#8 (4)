@@ -1,0 +1,11 @@
+# Take user input for a list of integers separated by spaces
+input_numbers = input("Enter a list of integers separated by spaces: ")
+
+# Split the input string into a list of integers
+numbers = [int(x) for x in input_numbers.split()]
+
+# Sort the list of numbers in ascending order using the sorted() function
+sorted_numbers = sorted(numbers)
+
+# Print the sorted list
+print("Sorted list in ascending order:", sorted_numbers)
