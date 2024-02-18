@@ -1,0 +1,7 @@
+Discuss the functionality of the format() function in Python and its importance in string formatting. Illustrate with an example.
+
+The format() function in Python is used for string formatting, allowing you to insert values into a string in a specified format. It provides a flexible and powerful way to create strings with placeholders that are replaced by values dynamically.
+
+The general syntax of the format() function is as follows:
+
+formatted_string = "template_string".format(value1, value2, ...)
