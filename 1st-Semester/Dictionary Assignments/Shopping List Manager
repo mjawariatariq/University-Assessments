@@ -21,4 +21,30 @@ def check_off_item(item):
 def display_list():
     print("Shopping List:")
     for item, checked_off in shopping_list.items():
-        status
+        status = " (Checked)" if checked_off else " (Pending)"
+        print(f"{item}{status}")
+
+while True:
+    print("\nOptions:")
+    print("1. Add item")
+    print("2. Remove item")
+    print("3. Check off item")
+    print("4. Display list")
+    print("5. Quit")
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        item = input("Enter item to add: ")
+        add_item(item)
+    elif choice == 2:
+        item = input("Enter item to remove: ")
+        remove_item(item)
+    elif choice == 3:
+        item = input("Enter item to check off: ")
+        check_off_item(item)
+    elif choice == 4:
+        display_list()
+    elif choice == 5:
+        break
+    else:
+        print("Invalid choice. Please try again.")
