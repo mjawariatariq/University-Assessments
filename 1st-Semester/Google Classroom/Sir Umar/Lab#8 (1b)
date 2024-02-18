@@ -1,0 +1,12 @@
+How does the round() function operate in Python, and in what situations would you use it? Give an example.
+
+Ans:
+# Example 1: Round to the nearest integer
+number1 = 3.6
+rounded_number1 = round(number1)
+print("Rounded number:", rounded_number1)  # Output: 4
+
+# Example 2: Round to a specified number of decimal places
+number2 = 3.14159
+rounded_number2 = round(number2, 2)  # Round to 2 decimal places
+print("Rounded number:", rounded_number2)  # Output: 3.14
