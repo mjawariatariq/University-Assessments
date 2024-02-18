@@ -1,0 +1,13 @@
+Write the output of following code:
+
+Input:
+
+d = {'x': 1, 'y': 2, 'z': 3}
+a = d.pop('y')
+print(a)
+print(d)
+
+Output:
+
+2
+{'x': 1, 'z': 3}
