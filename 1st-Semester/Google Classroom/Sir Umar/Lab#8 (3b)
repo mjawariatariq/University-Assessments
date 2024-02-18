@@ -1,0 +1,20 @@
+Explain the purpose of the isinstance() function and when it might be beneficial in a Python program. Provide an example.
+
+The isinstance() function in Python checks if an object belongs to a specified class or data type.
+It's useful for type checking, conditional branching, and polymorphism. Here's a concise example:
+
+class Animal: pass
+class Dog(Animal): pass
+class Cat(Animal): pass
+
+dog = Dog()
+cat = Cat()
+
+print(isinstance(dog, Dog))  # True
+print(isinstance(dog, Animal))  # True
+print(isinstance(cat, Dog))  # False
+print(isinstance(cat, Cat))  # True
+print(isinstance(cat, Animal))  # True
+
+
+This code demonstrates the usage of isinstance() to check object types within a class hierarchy.
