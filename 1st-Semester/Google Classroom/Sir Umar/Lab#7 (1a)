@@ -1,3 +1,5 @@
+Write a program that asks the user for student’s name and obtained marks for 10 students and then stores them in a dictionary.
+
 student_name = (input('Enter Student Name:'))
 
 obtained_marks = {
