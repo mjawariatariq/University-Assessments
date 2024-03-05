@@ -1,1 +1,101 @@
+class MenuItem:
 
+    def __init__(self, name, price, description, category):
+
+        self.name = name
+        self.price = price
+        self.description = description
+        self.category = category
+
+class RestaurantMenu:
+
+    def __init__(self):
+
+        self.menu = []
+
+    def add_item(self, item):
+
+        self.menu.append(item).:
+
+        print("Menu item added.")
+
+    def remove_item(self, name):
+
+        for item in self.menu:
+
+            if item.name == name:
+
+                self.menu.remove(item)
+
+                print("Menu item removed.")
+
+                return
+
+        print("Menu item not found.")
+
+    def update_item(self, name, new_price, new_description, new_category):
+
+        for item in self.menu:
+
+            if item.name == name:
+
+                item.price = new_price
+
+                item.description = new_description
+
+                item.category = new_category
+
+                print("Menu item updated.")
+
+                return
+
+        print("Menu item not found.")
+
+    def display_menu(self):
+
+        print("Restaurant Menu:")
+
+        for item in self.menu:
+
+            print("Name:", item.name)
+            print("Price:", item.price)
+            print("Description:", item.description)
+            print("Category:", item.category)
+            print()
+
+    def filter_by_category(self, category):
+
+        print("Menu items in the", category, "category:")
+
+        for item in self.menu:
+
+            if item.category == category:
+
+                print("Name:", item.name)
+                print("Price:", item.price)
+
+                print("Description:", item.description)
+
+                print()
+
+menu = RestaurantMenu()
+
+
+menu.add_item(MenuItem("Caesar Salad", 10.99, "Classic Caesar salad with romaine lettuce, croutons, and Caesar dressing.", "Appetizer"))
+menu.add_item(MenuItem("Margherita Pizza", 14.99, "Traditional Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.", "Main Course"))
+menu.add_item(MenuItem("Tiramisu", 7.99, "Classic Italian dessert made with ladyfingers, coffee, mascarpone cheese, and cocoa powder.", "Dessert"))
+
+
+menu.display_menu()
+
+
+menu.filter_by_category("Dessert")
+
+
+menu.remove_item("Margherita Pizza")
+
+
+menu.update_item("Caesar Salad", 11.99, "Classic Caesar salad with romaine lettuce, croutons, Caesar dressing, and grilled chicken.", "Appetizer")
+
+
+menu.display_menu()
