@@ -1,0 +1,5 @@
+favorite_fruits = ["apple", "banana", "orange"]
+
+
+
+print("The second favorite fruit is:", favorite_fruits[1])
