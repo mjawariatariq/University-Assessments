@@ -1,0 +1,9 @@
+1. Syntax: Syntax refers to the set of rules that defines the structure and organization of statements or expressions in a programming language. It governs the correct usage of symbols, keywords, and punctuation marks to form valid code. Following the syntax rules ensures that the code is properly written and can be understood by the compiler or interpreter.
+
+
+
+2. Semantics: Semantics refers to the meaning or interpretation of the code within a programming language. It defines the behavior of the code when executed, including the effects it has on the program's state or output. Understanding the semantics of a programming language involves grasping how different language constructs and operations affect the program's behavior.
+
+
+
+3. Keywords: Keywords are reserved words in a programming language that have predefined meanings and purposes. They serve as building blocks for defining the structure and logic of programs. Keywords cannot be used as identifiers (such as variable names or function names) because they are reserved for specific language constructs. Examples of keywords in Python include "if", "else", "for", "while", "def", etc.
