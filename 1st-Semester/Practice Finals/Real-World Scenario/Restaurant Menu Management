@@ -58,9 +58,13 @@ class RestaurantMenu:
         for item in self.menu:
 
             print("Name:", item.name)
+
             print("Price:", item.price)
+
             print("Description:", item.description)
+
             print("Category:", item.category)
+
             print()
 
     def filter_by_category(self, category):
