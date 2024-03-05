@@ -1,0 +1,7 @@
+def multiply(a, b):
+
+    return a * b
+
+result = multiply(5, 7)
+
+print("The product of 5 and 7 is:", result)
