@@ -1,5 +1,0 @@
-names = ["Jawaria", "Dharmann", "Jayshetty", "Jessica"]
-
-for name in names:
-
-    print(name)
