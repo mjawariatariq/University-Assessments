@@ -1,0 +1,8 @@
+book_info = {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year_of_publication": 1960
+}
+
+
+print("Title of the book:", book_info["title"])
