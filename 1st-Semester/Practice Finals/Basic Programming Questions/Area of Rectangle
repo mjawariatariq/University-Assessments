@@ -1,0 +1,4 @@
+width = 5
+height = 3
+area = width * height
+print("The area of the rectangle is:", area)
