@@ -1,0 +1,58 @@
+class ShoppingCart:
+
+    def __init__(self):
+
+        self.cart = []
+
+    def add_item(self, item_name, price):
+
+        self.cart.append({"item_name": item_name, "price": price})
+        print(item_name, "added to cart.")
+
+
+    def remove_item(self, item_name):
+
+        for item in self.cart:
+
+            if item["item_name"] == item_name:
+
+                self.cart.remove(item)
+
+                print(item_name, "removed from cart.")
+
+                return
+
+        print("Item not found in cart.")
+
+    def view_cart(self):
+
+        if self.cart:
+
+            print("Items in your cart:")
+
+            total_cost = 0
+
+            for item in self.cart:
+
+                print("- {} (${:.2f})".format(item["item_name"], item["price"])
+
+                total_cost += item["price"]
+
+            print("Total cost: ${:.2f}".format(total_cost))
+
+        else:
+
+            print("Your cart is empty.")
+
+
+cart = ShoppingCart()
+
+
+cart.add_item("Shirt", 20)
+cart.add_item("Jeans", 30)
+cart.add_item("Shoes", 50)
+
+cart.remove_item("Jeans")
+
+
+cart.view_cart()
