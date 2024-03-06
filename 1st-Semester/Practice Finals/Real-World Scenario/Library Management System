@@ -1,0 +1,120 @@
+class Book:
+    def __init__(self, title, author, isbn, availability=True):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self.availability = availability
+
+class User:
+    def __init__(self, name, user_id):
+        self.name = name
+        self.user_id = user_id
+        self.borrowed_books = []
+
+class Library:
+    def __init__(self):
+        self.books = []
+        self.users = []
+
+    def add_book(self, title, author, isbn):
+
+        new_book = Book(title, author, isbn)
+
+        self.books.append(new_book)
+
+    def register_user(self, name, user_id):
+
+        new_user = User(name, user_id)
+        self.users.append(new_user)
+
+    def borrow_book(self, user_id, isbn):
+        for user in self.users:
+            if user.user_id == user_id:
+                for book in self.books:
+                    if book.isbn == isbn and book.availability:
+                        book.availability = False
+                        user.borrowed_books.append(book)
+                        print(f"Book '{book.title}' borrowed successfully by {user.name}.")
+                        return
+                print("Book not available.")
+                return
+        print("User not found.")
+
+    def return_book(self, user_id, isbn):
+        for user in self.users:
+            if user.user_id == user_id:
+                for book in user.borrowed_books:
+                    if book.isbn == isbn:
+
+                        book.availability = True
+                        user.borrowed_books.remove(book)
+
+                        print(f"Book '{book.title}' returned successfully by {user.name}.")
+                        return
+
+                print("Book not found in user's borrowed list.")
+
+                return
+
+        print("User not found.")
+
+    def display_available_books(self, criteria=None):
+
+        if criteria:
+
+            filtered_books = []
+            for book in self.books:
+
+                if criteria.lower() in book.title.lower() or criteria.lower() in book.author.lower():
+                    filtered_books.append(book)
+
+            if filtered_books:
+
+                print("Available books based on criteria:")
+
+                for book in filtered_books:
+
+                    print(f"Title: {book.title}, Author: {book.author}, ISBN: {book.isbn}")
+
+            else:
+
+                print("No books found based on criteria.")
+
+        else:
+
+            available_books = [book for book in self.books if book.availability]
+
+            if available_books:
+
+                print("Available books:")
+
+                for book in available_books:
+
+                    print(f"Title: {book.title}, Author: {book.author}, ISBN: {book.isbn}")
+
+            else:
+
+                print("No books available.")
+
+
+library = Library()
+
+library.add_book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "9780747532743")
+
+library.add_book("To Kill a Mockingbird", "Harper Lee", "9780061120084")
+
+library.add_book("1984", "George Orwell", "9780451524935")
+
+library.register_user("Alice", 101)
+
+library.register_user("Bob", 102)
+
+library.borrow_book(101, "9780747532743")
+
+library.borrow_book(102, "9780061120084")
+
+library.display_available_books("Harry Potter")
+
+library.return_book(101, "9780747532743")
+
+library.display_available_books()
