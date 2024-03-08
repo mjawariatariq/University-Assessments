@@ -1,0 +1,52 @@
+lights_on = False
+brightness = 50  # Default brightness (0-100)
+color = "Warm White"  # Default color
+room_temperature = 22  # Default temperature in Celsius
+door_locked = True
+
+while True:
+    print("1. Adjust lighting")
+    print("2. Set room temperature")
+    print("3. Lock/unlock doors")
+    print("4. Respond to voice commands")
+    print("5. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print("1. Turn lights on/off")
+        print("2. Adjust brightness")
+        print("3. Change color")
+        light_choice = input("Enter your choice: ")
+
+        if light_choice == "1":
+            lights_on = not lights_on
+            print(f"Lights {'on' if lights_on else 'off'}")
+
+        elif light_choice == "2":
+            brightness = int(input("Enter brightness level (0-100): "))
+            print(f"Brightness set to {brightness}%")
+
+        elif light_choice == "3":
+            color = input("Enter color (e.g., Warm White, Cool White): ")
+            print(f"Color set to {color}")
+
+    elif choice == "2":
+        room_temperature = float(input("Enter desired room temperature (in Celsius): "))
+        print(f"Room temperature set to {room_temperature}°C")
+
+    elif choice == "3":
+        door_choice = input("Lock or unlock doors? (lock/unlock): ")
+        door_locked = door_choice.lower() == "lock"
+        print(f"Doors {'locked' if door_locked else 'unlocked'}")
+
+    elif choice == "4":
+        voice_command = input("Enter voice command: ")
+        # Process voice command (use voice recognition APIs)
+        # Example: "Turn off lights" -> Set lights_off = True
+
+    elif choice == "5":
+        print("Exiting the smart home control system.")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
