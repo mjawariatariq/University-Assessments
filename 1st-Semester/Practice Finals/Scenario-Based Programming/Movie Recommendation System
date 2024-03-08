@@ -1,1 +1,21 @@
+movies = [
+    {'title': 'The Matrix', 'genre': 'Action', 'year': 1999},
+    {'title': 'Forrest Gump', 'genre': 'Drama', 'year': 1994},
+    {'title': 'Anchorman', 'genre': 'Comedy', 'year': 2004},
+    # Add more movies here
+]
 
+def recommend_movies(age, genre):
+    print(f"Recommended movies for you (age {age}):")
+    for movie in movies:
+        if genre.lower() == movie['genre'].lower() or not genre:
+            print(f"{movie['title']} ({movie['year']})")
+
+def main():
+    age = int(input("Enter your age: "))
+    genre = input("Enter your favorite movie genre (or leave blank for a mix): ")
+
+    recommend_movies(age, genre)
+
+if __name__ == "__main__":
+    main()
