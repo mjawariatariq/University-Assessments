@@ -1,31 +1,49 @@
-if __name__ == "__main__":
-    manager = MenuManager()
+class MenuManager:
+    def __init__(self):
+        self.menu_items = []
+
+    def add_item(self, name, price, description, category):
+        pass
+
+    def remove_item(self, name):
+        pass
+
+    def update_item(self, name, price, description, category):
+        pass
+
+    def display_menu(self):
+        pass
+
+def menu(menu_manager):
     while True:
-        choice = input("1. Add | 2. Remove | 3. Update | 4. Display | 5. Exit: ")
+        choice = input("1. Add, 2. Remove, 3. Update, 4. View, 5. Exit: ")
 
-        if choice == '1':
-            name = input("Enter item name: ")
-            price = float(input("Enter item price: "))
-            description = input("Enter item description: ")
-            category = input("Enter item category: ")
-            manager.add_item(name, price, description, category)
+        if choice == "1":
+            name = input("Enter Name: ")
+            price = input("Enter Price: ")
+            description = input("Enter Description: ")
+            category = input("Enter Category: ")
+            menu_manager.add_item(name, price, description, category)
 
-        elif choice == '2':
-            name = input("Enter item name to remove: ")
-            manager.remove_item(name)
+        elif choice == "2":
+            name = input("Enter Name to remove: ")
+            menu_manager.remove_item(name)
 
-        elif choice == '3:
-            name = input("Enter item name to update: ")
-            new_price = float(input("Enter new price: "))
-            new_description = input("Enter new description: ")
-            new_category = input("Enter new category: ")
-            manager.update_item(name, new_price, new_description, new_category)
+        elif choice == "3":
+            name = input("Enter Name to update: ")
+            price = input("Enter new Price: ")
+            description = input("Enter new Description: ")
+            category = input("Enter new Category: ")
+            menu_manager.update_item(name, price, description, category)
 
-        elif choice == '4':
-            manager.display_menu()
+        elif choice == "4":
+            menu_manager.display_menu()  
 
-        elif choice == '5':
+        elif choice == "5":
             break
 
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid Menu")
+
+menu_manager = MenuManager()
+menu(menu_manager)
