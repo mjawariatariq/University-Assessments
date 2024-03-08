@@ -1,21 +1,53 @@
-movies = [
-    {'title': 'The Matrix', 'genre': 'Action', 'year': 1999},
-    {'title': 'Forrest Gump', 'genre': 'Drama', 'year': 1994},
-    {'title': 'Anchorman', 'genre': 'Comedy', 'year': 2004},
-    # Add more movies here
-]
+age = int(input("Enter your Age:"))
+genre = input("Enter your Genre Preference:")
 
-def recommend_movies(age, genre):
-    print(f"Recommended movies for you (age {age}):")
-    for movie in movies:
-        if genre.lower() == movie['genre'].lower() or not genre:
-            print(f"{movie['title']} ({movie['year']})")
+recommended_movies = {
+    "comedy": [
+        {"title": "Three Idiots", "genre": "hi", "release_year": 1999},
+        {"title": "Two Idiots", "genre": "hello", "release_year": 2000},
+        {"title": "One Idiots", "genre": "bye", "release_year": 2001}
+    ],
+    "action": [
+        {"title": "Idiots", "genre": "ja", "release_year": 2002},
+        {"title": "Thots", "genre": "ds", "release_year": 2009},
+        {"title": "Tots", "genre": "jd", "release_year": 3832}
+    ],
+    "drama": [
+        {"title": "Three Sdf", "genre": "sv", "release_year": 3452},
+        {"title": "Df Idiots", "genre": "fbg", "release_year": 4633},
+        {"title": "Three Dfvx", "genre": "fv", "release_year": 1943}
+    ]
+}
 
-def main():
-    age = int(input("Enter your age: "))
-    genre = input("Enter your favorite movie genre (or leave blank for a mix): ")
 
-    recommend_movies(age, genre)
+if genre in recommended_movies:
+    print("Recommended movies for your genre:")
+    for movie in recommended_movies[genre]:
+        print(f"Title: {movie['title']}, Genre: {movie['genre']}, Release Year: {movie['release_year']}")
+else:
+    print("I can't understand your genre, but here are some popular movies for you:")
 
-if __name__ == "__main__":
-    main()
+
+    popular_movies = {
+        "comedy": [
+            {"title": "Three Idiots", "genre": "hi", "release_year": 1999},
+            {"title": "Two Idiots", "genre": "hello", "release_year": 2000},
+            {"title": "One Idiots", "genre": "bye", "release_year": 2001}
+        ],
+        "action": [
+            {"title": "Idiots", "genre": "ja", "release_year": 2002},
+            {"title": "Thots", "genre": "ds", "release_year": 2009},
+            {"title": "Tots", "genre": "jd", "release_year": 3832}
+        ],
+        "drama": [
+            {"title": "Three Sdf", "genre": "sv", "release_year": 3452},
+            {"title": "Df Idiots", "genre": "fbg", "release_year": 4633},
+            {"title": "Three Dfvx", "genre": "fv", "release_year": 1943}
+        ]
+    }
+
+
+    for genre, movies in popular_movies.items():
+        print(f"{genre.capitalize()} movies:")
+        for movie in movies:
+            print(f"Title: {movie['title']}, Genre: {movie['genre']}, Release Year: {movie['release_year']}")
