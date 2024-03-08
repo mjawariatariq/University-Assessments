@@ -1,0 +1,108 @@
+menu = [
+    {"name": "Spaghetti Carbonara", "price": 12.99},
+    {"name": "Margherita Pizza", "price": 10.99},
+    {"name": "Caesar Salad", "price": 8.49},
+    {"name": "Cheeseburger", "price": 9.99},
+    {"name": "Chocolate Cake", "price": 6.99}
+]
+
+orders = {}
+
+def add_item(order, item_index, quantity):
+    item = menu[item_index]
+    order.append({"name": item["name"], "price": item["price"], "quantity": quantity})
+    print(f"{quantity}x {item['name']} added to the order.")
+
+def remove_item(order, item_index):
+    if 0 <= item_index < len(order):
+        item = order.pop(item_index)
+        print(f"{item['name']} removed from the order.")
+    else:
+        print("Invalid item index.")
+
+def calculate_total(order):
+    total = sum(item["price"] * item["quantity"] for item in order)
+    return total
+
+def print_receipt(order, table_number):
+    print(f"Receipt for Table {table_number}:")
+    for index, item in enumerate(order, start=1):
+        print(f"{index}. {item['name']}: ${item['price']:.2f} x {item['quantity']}")
+    total = calculate_total(order)
+    print(f"Total: ${total:.2f}")
+
+def main():
+    while True:
+        print("\nRestaurant Order Management System")
+        print("1. Create New Order")
+        print("2. Manage Existing Order")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            table_number = input("Enter table number: ")
+            orders[table_number] = []
+            print(f"New order created for Table {table_number}.")
+            continue
+
+        elif choice == "2":
+            table_number = input("Enter table number: ")
+            order = orders.get(table_number)
+            if order is not None:
+                while True:
+                    print("\nOrder Management")
+                    print("1. Add Item")
+                    print("2. Remove Item")
+                    print("3. Calculate Total")
+                    print("4. Print Receipt")
+                    print("5. Back to Main Menu")
+
+                    option = input("Enter your choice: ")
+
+                    if option == "1":
+                        try:
+                            item_index = int(input("Enter item number to add: ")) - 1
+                            quantity = int(input("Enter quantity: "))
+                            if 0 <= item_index < len(menu):
+                                add_item(order, item_index, quantity)
+                            else:
+                                print("Invalid item number.")
+                        except ValueError:
+                            print("Invalid input.")
+                        continue
+
+                    elif option == "2":
+                        try:
+                            item_index = int(input("Enter item number to remove: ")) - 1
+                            remove_item(order, item_index)
+                        except ValueError:
+                            print("Invalid input.")
+                        continue
+
+                    elif option == "3":
+                        total = calculate_total(order)
+                        print(f"Total cost of the order: ${total:.2f}")
+                        continue
+
+                    elif option == "4":
+                        print_receipt(order, table_number)
+                        continue
+
+                    elif option == "5":
+                        break
+                    else:
+                        print("Invalid choice. Please try again.")
+            else:
+                print("Order not found.")
+            continue
+
+        elif choice == "3":
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+            continue
+
+if __name__ == "__main__":
+    main()
