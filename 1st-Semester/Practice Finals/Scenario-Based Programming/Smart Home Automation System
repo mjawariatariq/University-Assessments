@@ -1,50 +1,57 @@
-lights_on = False
-brightness = 50  # Default brightness (0-100)
-color = "Warm White"  # Default color
-room_temperature = 22  # Default temperature in Celsius
-door_locked = True
+light = "off"
+brightness = 50
+light_temperature = "warm"
+room_temperature = 25
+locking_doors = "unlock"
 
 while True:
-    print("1. Adjust lighting")
-    print("2. Set room temperature")
-    print("3. Lock/unlock doors")
-    print("4. Respond to voice commands")
-    print("5. Exit")
-    choice = input("Enter your choice: ")
+    print("\n1. Adjust Light (on/off)")
+    print("2. Adjust Brightness")
+    print("3. Adjust Light Temperature")
+    print("4. Adjust Room Temperature")
+    print("5. Adjust Locking Doors (lock/unlock)")
+    print("6. Exit the program")
+    choice = input("Enter your Choice: ")
 
     if choice == "1":
-        print("1. Turn lights on/off")
-        print("2. Adjust brightness")
-        print("3. Change color")
-        light_choice = input("Enter your choice: ")
-
-        if light_choice == "1":
-            lights_on = not lights_on
-            print(f"Lights {'on' if lights_on else 'off'}")
-
-        elif light_choice == "2":
-            brightness = int(input("Enter brightness level (0-100): "))
-            print(f"Brightness set to {brightness}%")
-
-        elif light_choice == "3":
-            color = input("Enter color (e.g., Warm White, Cool White): ")
-            print(f"Color set to {color}")
+        light = input("Enter Light (on/off): ")
+        if light == "on":
+            print("Light is on")
+        else:
+            print("Light is off")
 
     elif choice == "2":
-        room_temperature = float(input("Enter desired room temperature (in Celsius): "))
-        print(f"Room temperature set to {room_temperature}°C")
+        brightness = int(input("Enter Brightness level: "))
+        if brightness == 50:
+            print("Average brightness")
+        elif brightness < 50:
+            print("Increase brightness")
+        else:
+            print("Brightness is too high")
 
     elif choice == "3":
-        door_choice = input("Lock or unlock doors? (lock/unlock): ")
-        door_locked = door_choice.lower() == "lock"
-        print(f"Doors {'locked' if door_locked else 'unlocked'}")
+        light_temperature = input("Enter Light Temperature (warm/cold): ")
+        print("Light temperature is", light_temperature)
 
     elif choice == "4":
-        voice_command = input("Enter voice command: ")
-        # Process voice command (use voice recognition APIs)
-        # Example: "Turn off lights" -> Set lights_off = True
+        room_temperature = int(input("Enter Room temperature: "))
+        if room_temperature == 25:
+            print("Perfect Room Temperature")
+        elif room_temperature < 25:
+            print("Room temperature is too low")
+        else:
+            print("Room temperature is too high")
 
     elif choice == "5":
+        locking_doors = input("Enter lock situation (lock/unlock): ")
+        if locking_doors == "lock":
+            print("Door is Locked")
+        elif locking_doors == "unlock":
+            print("Door is Unlocked")
+        else:
+            print("Invalid input for door status")
+
+    elif choice == "6":
         print("Exiting the smart home control system.")
         break
 
