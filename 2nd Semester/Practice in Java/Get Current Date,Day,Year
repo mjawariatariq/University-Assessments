@@ -1,0 +1,15 @@
+import java.time.LocalDate;
+import java.time.Month;
+public class Hy {
+    public static void main(String[]args){
+        LocalDate now = LocalDate.now();
+        LocalDate customDate = LocalDate.of(2006, 03, 27);
+        int dayofMonth = now.getDayOfMonth();
+        Month month = now.getMonth();
+        int year = now.getYear();
+        System.out.println(dayofMonth);
+        System.out.println(month);
+        System.out.println(year);
+
+    }
+}
