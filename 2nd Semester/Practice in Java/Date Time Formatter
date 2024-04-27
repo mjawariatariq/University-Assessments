@@ -1,0 +1,13 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Hi {
+    public static void main(String[] args) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-yyyy'T'H:m");
+
+        LocalDateTime mydate = LocalDateTime.parse("27-4-2024T4:33", formatter);
+
+        System.out.println(mydate);
+    }
+}
