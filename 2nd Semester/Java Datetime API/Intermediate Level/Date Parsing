@@ -1,0 +1,19 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Scanner;
+
+public class DateParsing {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a date (yyyy-MM-dd): ");
+        String dateString = scanner.nextLine();
+
+        try {
+            LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ISO_LOCAL_DATE);
+            System.out.println("Parsed date: " + date);
+        } catch (DateTimeParseException e) {
+            System.out.println("Error parsing the date. Please use the correct format (yyyy-MM-dd).");
+        }
+    }
+}
