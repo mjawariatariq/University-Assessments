@@ -1,0 +1,23 @@
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class TimeZoneConversion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the date and time (yyyy-MM-ddTHH:mm): ");
+        LocalDateTime localDateTime = LocalDateTime.parse(scanner.nextLine());
+        System.out.println("Enter the source time zone (e.g., UTC): ");
+        ZoneId sourceTimeZone = ZoneId.of(scanner.nextLine());
+        System.out.println("Enter the target time zone (e.g., America/Los_Angeles): ");
+        ZoneId targetTimeZone = ZoneId.of(scanner.nextLine());
+
+        ZonedDateTime sourceDateTime = ZonedDateTime.of(localDateTime, sourceTimeZone);
+        ZonedDateTime targetDateTime = sourceDateTime.withZoneSameInstant(targetTimeZone);
+
+        System.out.println("Converted date and time: " +
+                targetDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a z")));
+    }
+}
