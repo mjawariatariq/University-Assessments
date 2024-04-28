@@ -1,0 +1,19 @@
+import java.time.LocalDateTime;
+import java.time.Duration;
+import java.util.Scanner;
+
+public class DurationBetweenEvents {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the start date and time (yyyy-MM-ddTHH:mm): ");
+        LocalDateTime startDateTime = LocalDateTime.parse(scanner.nextLine());
+        System.out.println("Enter the end date and time (yyyy-MM-ddTHH:mm): ");
+        LocalDateTime endDateTime = LocalDateTime.parse(scanner.nextLine());
+
+        Duration duration = Duration.between(startDateTime, endDateTime);
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60;
+
+        System.out.println("Duration of the event is: " + hours + " hours and " + minutes + " minutes.");
+    }
+}
