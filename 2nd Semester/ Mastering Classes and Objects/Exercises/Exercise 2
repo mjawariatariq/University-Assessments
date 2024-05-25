@@ -1,35 +1,59 @@
-public class Calculator {
+import java.util.Scanner;
 
-    public int add(int a, int b) {
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("Choose an operation (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        double result = 0.0;
+
+        switch (operator) {
+            case '+':
+                result = add(num1, num2);
+                break;
+            case '-':
+                result = subtract(num1, num2);
+                break;
+            case '*':
+                result = multiply(num1, num2);
+                break;
+            case '/':
+                result = divide(num1, num2);
+                break;
+            default:
+                System.out.println("Invalid operator. Please choose +, -, *, or /.");
+                return;
+        }
+
+        System.out.println("Result: " + result);
+    }
+
+    public static double add(double a, double b) {
         return a + b;
     }
 
-    public int subtract(int a, int b) {
+    public static double subtract(double a, double b) {
         return a - b;
     }
 
-    // Method for multiplication
-    public int multiply(int a, int b) {
+    public static double multiply(double a, double b) {
         return a * b;
     }
 
-    public double divide(int a, int b) {
+    public static double divide(double a, double b) {
         if (b != 0) {
-            return (double) a / b;
+            return a / b;
         } else {
-            System.out.println("Error: Cannot divide by zero.");
+            System.out.println("Cannot divide by zero.");
             return Double.NaN;
         }
-    }
-
-    public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-        int num1 = 10;
-        int num2 = 5;
-
-        System.out.println("Addition: " + calculator.add(num1, num2));
-        System.out.println("Subtraction: " + calculator.subtract(num1, num2));
-        System.out.println("Multiplication: " + calculator.multiply(num1, num2));
-        System.out.println("Division: " + calculator.divide(num1, num2));
     }
 }
