@@ -1,0 +1,24 @@
+class Rectangle {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate the area of the rectangle
+    public double calculateArea() {
+        return width * height;
+    }
+
+    public static void main(String[] args) {
+        // Create two Rectangle objects
+        Rectangle rectangle1 = new Rectangle(4.0, 40.0);
+        Rectangle rectangle2 = new Rectangle(3.5, 35.9);
+
+        // Display rectangle areas
+        System.out.println("Rectangle 1 Area: " + rectangle1.calculateArea());
+        System.out.println("Rectangle 2 Area: " + rectangle2.calculateArea());
+    }
+}
