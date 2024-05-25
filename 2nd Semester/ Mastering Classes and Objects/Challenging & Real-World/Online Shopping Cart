@@ -1,61 +1,98 @@
-class Item:
-    def __init__(self, name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+class Item {
+    private String productName;
+    private double price;
+    private int quantity;
 
-    def get_name(self):
-        return self.name
+    public Item(String productName, double price, int quantity) {
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
-    def get_price(self):
-        return self.price
+    public String getProductName() {
+        return productName;
+    }
 
-    def get_quantity(self):
-        return self.quantity
+    public double getPrice() {
+        return price;
+    }
 
-class ShoppingCart:
-    def __init__(self):
-        self.cart_items = []
+    public int getQuantity() {
+        return quantity;
+    }
+}
 
-    def add_item(self, item):
-        # Check if the item already exists in the cart
-        for existing_item in self.cart_items:
-            if existing_item.get_name() == item.get_name():
-                existing_item.quantity += item.get_quantity()
-                return
-        # If not found, add the item to the cart
-        self.cart_items.append(item)
+class ShoppingCart {
+    private Item[] cart;
+    private int itemCount;
 
-    def update_quantity(self, item_name, new_quantity):
-        for item in self.cart_items:
-            if item.get_name() == item_name:
-                item.quantity = new_quantity
-                return
+    public ShoppingCart(int maxItems) {
+        cart = new Item[maxItems];
+        itemCount = 0;
+    }
 
-    def remove_item(self, item_name):
-        self.cart_items = [item for item in self.cart_items if item.get_name() != item_name]
+    public void addItem(Item item) {
+        if (itemCount < cart.length) {
+            cart[itemCount] = item;
+            itemCount++;
+            System.out.println("Added " + item.getProductName() + " to the cart.");
+        } else {
+            System.out.println("Cart is full. Cannot add more items.");
+        }
+    }
 
-    def calculate_total_bill(self):
-        total = sum(item.get_price() * item.get_quantity() for item in self.cart_items)
-        return total
+    public void updateQuantity(String productName, int newQuantity) {
+        for (int i = 0; i < itemCount; i++) {
+            if (cart[i].getProductName().equalsIgnoreCase(productName)) {
+                cart[i].quantity = newQuantity;
+                System.out.println("Updated quantity for " + productName);
+                return;
+            }
+        }
+        System.out.println("Item not found: " + productName);
+    }
 
-    def print_cart_contents(self):
-        print("Cart Contents:")
-        for item in self.cart_items:
-            print(f"{item.get_name()} - Quantity: {item.get_quantity()}, Price: ${item.get_price()}")
+    public void removeItem(String productName) {
+        for (int i = 0; i < itemCount; i++) {
+            if (cart[i].getProductName().equalsIgnoreCase(productName)) {
+                System.out.println("Removed " + productName + " from the cart.");
+                cart[i] = cart[itemCount - 1];
+                itemCount--;
+                return;
+            }
+        }
+        System.out.println("Item not found: " + productName);
+    }
 
-# Example usage
-if __name__ == "__main__":
-    apple = Item("Apple", 0.99, 5)
-    banana = Item("Banana", 0.75, 3)
+    public double calculateTotalBill() {
+        double total = 0;
+        for (int i = 0; i < itemCount; i++) {
+            total += cart[i].getPrice() * cart[i].getQuantity();
+        }
+        return total;
+    }
 
-    cart = ShoppingCart()
-    cart.add_item(apple)
-    cart.add_item(banana)
+    public void printCartContents() {
+        System.out.println("Cart Contents:");
+        for (int i = 0; i < itemCount; i++) {
+            System.out.println(cart[i].getProductName() + " - Quantity: " + cart[i].getQuantity()
+                    + ", Price: $" + cart[i].getPrice());
+        }
+    }
 
-    cart.update_quantity("Apple", 8)
-    cart.remove_item("Banana")
+    public static void main(String[] args) {
+        ShoppingCart cart = new ShoppingCart(10);
 
-    cart.print_cart_contents()
-    total_bill = cart.calculate_total_bill()
-    print(f"Total Bill Amount: ${total_bill:.2f}")
+        Item item1 = new Item("T-shirt", 19.99, 2);
+        Item item2 = new Item("Jeans", 39.99, 1);
+
+        cart.addItem(item1);
+        cart.addItem(item2);
+
+        cart.updateQuantity("T-shirt", 3);
+        cart.removeItem("Jeans");
+
+        cart.printCartContents();
+        System.out.println("Total Bill: $" + cart.calculateTotalBill());
+    }
+}
