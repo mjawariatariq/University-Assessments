@@ -1,0 +1,61 @@
+class Item:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+    def get_name(self):
+        return self.name
+
+    def get_price(self):
+        return self.price
+
+    def get_quantity(self):
+        return self.quantity
+
+class ShoppingCart:
+    def __init__(self):
+        self.cart_items = []
+
+    def add_item(self, item):
+        # Check if the item already exists in the cart
+        for existing_item in self.cart_items:
+            if existing_item.get_name() == item.get_name():
+                existing_item.quantity += item.get_quantity()
+                return
+        # If not found, add the item to the cart
+        self.cart_items.append(item)
+
+    def update_quantity(self, item_name, new_quantity):
+        for item in self.cart_items:
+            if item.get_name() == item_name:
+                item.quantity = new_quantity
+                return
+
+    def remove_item(self, item_name):
+        self.cart_items = [item for item in self.cart_items if item.get_name() != item_name]
+
+    def calculate_total_bill(self):
+        total = sum(item.get_price() * item.get_quantity() for item in self.cart_items)
+        return total
+
+    def print_cart_contents(self):
+        print("Cart Contents:")
+        for item in self.cart_items:
+            print(f"{item.get_name()} - Quantity: {item.get_quantity()}, Price: ${item.get_price()}")
+
+# Example usage
+if __name__ == "__main__":
+    apple = Item("Apple", 0.99, 5)
+    banana = Item("Banana", 0.75, 3)
+
+    cart = ShoppingCart()
+    cart.add_item(apple)
+    cart.add_item(banana)
+
+    cart.update_quantity("Apple", 8)
+    cart.remove_item("Banana")
+
+    cart.print_cart_contents()
+    total_bill = cart.calculate_total_bill()
+    print(f"Total Bill Amount: ${total_bill:.2f}")
