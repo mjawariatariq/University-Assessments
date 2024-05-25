@@ -1,0 +1,27 @@
+public class Book {
+    private String title;
+    private String author;
+    private String genre;
+
+    // Constructor to initialize the book details
+    public Book(String title, String author, String genre) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+    }
+
+    // Method to display book information
+    public void displayDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Genre: " + genre);
+    }
+
+    public static void main(String[] args) {
+        // Create a Book object
+        Book myBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic Fiction");
+
+        // Display book details
+        myBook.displayDetails();
+    }
+}
