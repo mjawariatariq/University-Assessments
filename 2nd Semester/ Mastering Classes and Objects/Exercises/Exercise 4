@@ -1,0 +1,39 @@
+class Shape {
+    protected String color; // Default color is "black"
+
+    public Shape() {
+        this.color = "black";
+    }
+
+    // Setter method for color
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method to calculate the area of the circle
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public static void main(String[] args) {
+        // Create a Circle object
+        double circleRadius = 5.0;
+        Circle myCircle = new Circle(circleRadius);
+
+        // Set color (optional)
+        myCircle.setColor("blue");
+
+        // Display circle information
+        System.out.println("Circle Color: " + myCircle.color);
+        System.out.println("Circle Radius: " + circleRadius);
+        System.out.println("Circle Area: " + myCircle.calculateArea());
+    }
+}
