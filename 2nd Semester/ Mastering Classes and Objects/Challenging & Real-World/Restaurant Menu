@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class RestaurantMenu {
+    private List<Dish> menu;
+
+    public RestaurantMenu() {
+        menu = new ArrayList<>();
+    }
+
+    public void addDish(Dish dish) {
+        menu.add(dish);
+    }
+
+    public void displayMenu() {
+        System.out.println("Menu:");
+        for (Dish dish : menu) {
+            System.out.println(dish.getName() + " - $" + dish.getPrice());
+        }
+    }
+
+    public void searchDishByName(String dishName) {
+        for (Dish dish : menu) {
+            if (dish.getName().equalsIgnoreCase(dishName)) {
+                System.out.println("Dish details for " + dishName + ":");
+                System.out.println("Description: " + dish.getDescription());
+                System.out.println("Price: $" + dish.getPrice());
+                return;
+            }
+        }
+        System.out.println("Dish not found: " + dishName);
+    }
+
+    public void displayDishesByType(String type) {
+        System.out.println(type + " Dishes:");
+        for (Dish dish : menu) {
+            if (dish.getDescription().equalsIgnoreCase(type)) {
+                System.out.println(dish.getName() + " - $" + dish.getPrice());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        RestaurantMenu menu = new RestaurantMenu();
+
+        Dish burger = new Dish("Burger", "Main Course", 8.99);
+        Dish salad = new Dish("Salad", "Appetizer", 6.00);
+        Dish pasta = new Dish("Pasta", "Main Course", 12.50);
+
+        menu.addDish(burger);
+        menu.addDish(salad);
+        menu.addDish(pasta);
+
+        menu.displayMenu();
+        menu.searchDishByName("Burger");
+        menu.displayDishesByType("Main Course");
+    }
+}
