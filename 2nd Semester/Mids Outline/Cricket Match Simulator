@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class Player {
+    String name;
+    int runs;
+    int wickets;
+
+    public Player(String name, int runs, int wickets) {
+        this.name = name;
+        this.runs = runs;
+        this.wickets = wickets;
+    }
+}
+
+public class CricketMatch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Create Player objects for both teams
+        Player[] team1 = {
+            new Player("Jawaria", 50, 2),
+            new Player("Sadia", 30, 1),
+            new Player("Firza", 20, 0)
+        };
+
+        Player[] team2 = {
+            new Player("Ali", 40, 3),
+            new Player("Hanna", 25, 2),
+            new Player("Humna", 15, 1)
+        };
+
+        // Calculate total scores for each team
+        int totalScoreTeam1 = 0;
+        for (Player player : team1) {
+            totalScoreTeam1 += player.runs;
+        }
+
+        int totalScoreTeam2 = 0;
+        for (Player player : team2) {
+            totalScoreTeam2 += player.runs;
+        }
+
+        // Declare the winning team
+        if (totalScoreTeam1 > totalScoreTeam2) {
+            System.out.println("Congratulations Team 1!");
+        } else if (totalScoreTeam2 > totalScoreTeam1) {
+            System.out.println("Congratulations Team 2!");
+        } else {
+            System.out.println("Match is a Draw!");
+        }
+
+        // Print summary
+        System.out.println("Team 1 Total Score: " + totalScoreTeam1);
+        System.out.println("Team 2 Total Score: " + totalScoreTeam2);
+    }
+}
