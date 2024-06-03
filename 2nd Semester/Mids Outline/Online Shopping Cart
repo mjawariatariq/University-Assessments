@@ -1,0 +1,82 @@
+
+public class Item {
+    String name;
+    int price;
+    int quantity;
+
+    public Item(String name, int price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+}
+
+class ShoppingCart {
+    Item[] cart = new Item[3];
+
+    public ShoppingCart() {
+        cart[0] = new Item("Ball", 50, 2);
+        cart[1] = new Item("Jewelry", 1500, 3);
+        cart[2] = new Item("Dress", 50000, 4);
+    }
+
+    public void updateItemPrice(String name, int price) {
+        for (Item cartItem : cart) {
+            if (cartItem.name.equalsIgnoreCase(name)) {
+                cartItem.price = price;
+                break;
+            }
+        }
+    }
+
+    public void addItem(Item item) {
+        // Add logic to add item to cart
+    }
+
+    public void removeItem(String name) {
+        for (int i = 0; i < cart.length; i++) {
+            if (cart[i].name.equalsIgnoreCase(name)) {
+                for (int j = i; j < cart.length - 1; j++) {
+                    cart[j] = cart[j + 1];
+                }
+                cart[cart.length - 1] = null;
+                break;
+            }
+        }
+    }
+
+    public void printCartContents() {
+        System.out.println("Cart Contents:");
+        for (Item cartItem : cart) {
+            if (cartItem != null) {
+                System.out.println("Item: " + cartItem.name + ", Quantity: " + cartItem.quantity + ", Price: " + cartItem.price);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ShoppingCart myCart = new ShoppingCart();
+
+        Item item = new Item("Shoes", 2000, 1);
+        boolean itemFound = false;
+
+        myCart.updateItemPrice("Ball", 75);
+
+        for (Item cartItem : myCart.cart) {
+            if (cartItem.name.equals(item.name)) {
+                itemFound = true;
+                break;
+            }
+        }
+
+        if (!itemFound) {
+            System.out.println("Item Successfully Added");
+        } else {
+            System.out.println("Item is not available");
+        }
+
+        myCart.removeItem("Dress");
+
+        myCart.printCartContents();
+    }
+}
