@@ -1,0 +1,61 @@
+
+public class Dish {
+    String name;
+    int price;
+    String category;
+
+    public Dish(String name, int price, String category) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    public static class RestaurantMenu {
+        Dish[] menu = new Dish[2];
+
+        public RestaurantMenu() {
+            menu[0] = new Dish("Biryani", 120, "Main course");
+            menu[1] = new Dish("Meat Balls", 450, "Appetizer");
+
+            Dish dish = new Dish("Nuggets", 500, "Appetizer");
+            System.out.println(dish);
+        }
+
+        public void displayDishesByCategory(String category) {
+            System.out.println("Dishes in category '" + category + "':");
+            for (Dish dish : menu) {
+                if (dish.category.equalsIgnoreCase(category)) {
+                    System.out.println("Name: " + dish.name + ", Price: " + dish.price + ", Category: " + dish.category);
+                }
+            }
+        }
+
+        public void searchDishByName(String name) {
+            for (Dish dish : menu) {
+                if (dish.name.equalsIgnoreCase(name)) {
+                    System.out.println("Name: " + dish.name + ", Price: " + dish.price + ", Category: " + dish.category);
+                    return;
+                }
+            }
+            System.out.println("Dish with name '" + name + "' not found.");
+        }
+
+        public void modifyDishByName(String name, int price, String description) {
+            for (Dish dish : menu) {
+                if (dish.name.equalsIgnoreCase(name)) {
+                    dish.price = price;
+                    System.out.println("Dish details modified successfully.");
+                    return;
+                }
+            }
+            System.out.println("Dish with name '" + name + "' not found.");
+        }
+    }
+
+    public static void main(String[] args) {
+        RestaurantMenu menu = new RestaurantMenu();
+        menu.searchDishByName("Biryani");
+        menu.modifyDishByName("Biryani", 150, "Spicy rice dish with meat or vegetables");
+        menu.displayDishesByCategory("Main course");
+    }
+}
