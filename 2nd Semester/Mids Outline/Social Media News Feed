@@ -1,0 +1,88 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Post {
+    String author;
+    String content;
+    int timestamp;
+    int likes;
+
+    public Post(String author, String content, int timestamp, int likes) {
+        this.author = author;
+        this.content = content;
+        this.timestamp = timestamp;
+        this.likes = likes;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public int getTimestamp() {
+        return timestamp;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+}
+
+class SocialMediaFeed {
+    List<Post> userFeed;
+
+    public SocialMediaFeed() {
+        this.userFeed = new ArrayList<>();
+    }
+
+    public void addPost(Post post) {
+        userFeed.add(0, post);
+    }
+
+    public void likePost(String author) {
+        for (Post post : userFeed) {
+            if (post.getAuthor().equals(author)) {
+                post.likes++;
+                System.out.println("Liked post by " + author);
+                return;
+            }
+        }
+        System.out.println("No post found by " + author);
+    }
+
+    public void searchAndDisplayPosts(String author) {
+        List<Post> postsByAuthor = new ArrayList<>();
+        for (Post post : userFeed) {
+            if (post.getAuthor().equals(author)) {
+                postsByAuthor.add(post);
+            }
+        }
+
+        if (postsByAuthor.isEmpty()) {
+            System.out.println("No posts found by " + author);
+            return;
+        }
+
+        for (int i = postsByAuthor.size() - 1; i >= 0; i--) {
+            Post post = postsByAuthor.get(i);
+            System.out.println("Author: " + post.getAuthor());
+            System.out.println("Content: " + post.getContent());
+            System.out.println("Timestamp: " + post.getTimestamp());
+            System.out.println("Likes: " + post.getLikes());
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        SocialMediaFeed feed = new SocialMediaFeed();
+
+        // Example usage
+        feed.addPost(new Post("Ali", "Hello World!", 1234567890, 90));
+        feed.addPost(new Post("Sabaa", "Coding is fun!", 1234567999, 1));
+        feed.likePost("ali");
+        feed.searchAndDisplayPosts("Ali");
+    }
+}
