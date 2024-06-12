@@ -1,0 +1,122 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+// Song class to represent a song
+class Song {
+    private String title;
+    private String artist;
+    private String genre;
+    private int duration; // in seconds
+
+    // Constructor
+    public Song(String title, String artist, String genre, int duration) {
+        this.title = title;
+        this.artist = artist;
+        this.genre = genre;
+        this.duration = duration;
+    }
+
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    // Override toString method to print song details
+    @Override
+    public String toString() {
+        return title + " by " + artist + " - " + duration + "s";
+    }
+}
+
+// MusicPlayer class to manage the playlist
+class MusicPlayer {
+    private List<Song> playlist;
+
+    // Constructor
+    public MusicPlayer() {
+        playlist = new ArrayList<>();
+    }
+
+    // Add a song to the playlist, avoiding duplicates
+    public void addSong(Song song) {
+        if (!playlist.contains(song)) {
+            playlist.add(song);
+            System.out.println("Added: " + song.getTitle());
+        } else {
+            System.out.println("Song already in the playlist.");
+        }
+    }
+
+    // Remove a song by title
+    public void removeSong(String title) {
+        playlist.removeIf(song -> song.getTitle().equals(title));
+    }
+
+    // Shuffle the playlist
+    public void shufflePlaylist() {
+        Collections.shuffle(playlist, new Random());
+    }
+
+    // Create playlist based on genre
+    public List<Song> createPlaylistByGenre(String genre) {
+        List<Song> genrePlaylist = new ArrayList<>();
+        for (Song song : playlist) {
+            if (song.getGenre().equals(genre)) {
+                genrePlaylist.add(song);
+            }
+        }
+        return genrePlaylist;
+    }
+
+    // Print the playlist
+    public void printPlaylist() {
+        for (Song song : playlist) {
+            System.out.println(song);
+        }
+    }
+}
+
+// Main class to test the MusicPlayer functionality
+public class Main {
+    public static void main(String[] args) {
+        MusicPlayer player = new MusicPlayer();
+
+        Song song1 = new Song("Shape of You", "Ed Sheeran", "Pop", 240);
+        Song song2 = new Song("Believer", "Imagine Dragons", "Rock", 210);
+        Song song3 = new Song("Dance Monkey", "Tones and I", "Pop", 200);
+
+        player.addSong(song1);
+        player.addSong(song2);
+        player.addSong(song3);
+
+        player.printPlaylist();
+
+        player.shufflePlaylist();
+
+        System.out.println("Shuffled Playlist:");
+        player.printPlaylist();
+
+        player.removeSong("Believer");
+
+        System.out.println("\nPlaylist after removal:");
+        player.printPlaylist();
+
+        List<Song> popPlaylist = player.createPlaylistByGenre("Pop");
+        System.out.println("\nPop Playlist:");
+        popPlaylist.forEach(System.out::println);
+    }
+}
