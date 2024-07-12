@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class Practice {
+    
+    public static void updateItem(ArrayList<String> list, int index, String newItem) {
+        list.set(index, newItem);
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String> fruit = new ArrayList<>();
+        fruit.add("Banana");
+        fruit.add("Kiwi");
+        fruit.add("Cherry");
+        System.out.println("Added fruit Items: " + fruit);
+
+        updateItem(fruit, 1, "Mango");
+        System.out.println("Fruit Items after update: " + fruit);
+    }
+}
