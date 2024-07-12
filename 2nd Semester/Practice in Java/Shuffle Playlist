@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Song {
+    String title;
+    
+    public Song(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return title;
+    }
+}
+
+public class Playlist {
+    public static void main(String[] args) {
+        List<Song> playlist = new ArrayList<>();
+        
+        // Adding songs to the playlist
+        playlist.add(new Song("Song A"));
+        playlist.add(new Song("Song B"));
+        playlist.add(new Song("Song C"));
+        playlist.add(new Song("Song D"));
+        
+        System.out.println("Original Playlist: " + playlist);
+        
+        Collections.shuffle(playlist);
+        
+        System.out.println("Shuffled Playlist: " + playlist);
+    }
+}
