@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+
+class Team {
+    String name;
+    int score;
+
+    public Team(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+}
+
+public class TeamScores {
+    public static void main(String[] args) {
+        ArrayList<Team> teams = new ArrayList<>();
+        
+        // Adding teams and their scores
+        teams.add(new Team("Team A", 85));
+        teams.add(new Team("Team B", 92));
+        teams.add(new Team("Team C", 76));
+        teams.add(new Team("Team D", 90));
+
+        String winningTeam = calculateWinningTeam(teams);
+        System.out.println("Winning Team: " + winningTeam);
+    }
+
+    public static String calculateWinningTeam(ArrayList<Team> teams) {
+        String winningTeam = "";
+        int highestScore = 0;
+
+        for (Team team : teams) {
+            if (team.score > highestScore) {
+                highestScore = team.score;
+                winningTeam = team.name;
+            }
+        }
+
+        return winningTeam;
+    }
+}
