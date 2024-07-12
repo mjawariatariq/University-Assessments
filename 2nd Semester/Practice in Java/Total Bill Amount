@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Product {
+    String name;
+    double price;
+    int quantity;
+
+    public Product(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+}
+
+public class ShoppingCart {
+    public static void main(String[] args) {
+        List<Product> cart = new ArrayList<>();
+
+        cart.add(new Product("Apple", 0.5, 4));  // 4 apples
+        cart.add(new Product("Banana", 0.3, 6)); // 6 bananas
+
+        // Calculate total bill
+        double totalBill = calculateTotalBill(cart);
+        
+        System.out.println("Total Bill Amount: $" + totalBill);
+    }
+
+    public static double calculateTotalBill(List<Product> cart) {
+        double total = 0;
+        for (Product product : cart) {
+            total += product.price * product.quantity;
+        }
+        return total;
+    }
+}
