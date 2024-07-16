@@ -1,22 +1,11 @@
-import java.util.ArrayList;
-
-public class Practice {
-    
-    public static boolean searchItem(ArrayList<String> list, String item) {
-        return list.contains(item);
-    }
-
-    public static void main(String[] args) {
-        ArrayList<String> fruit = new ArrayList<>();
-        fruit.add("Banana");
-        fruit.add("Kiwi");
-        fruit.add("Cherry");
-        System.out.println("Added fruit Items: " + fruit);
-
-        boolean foundKiwi = searchItem(fruit, "Kiwi");
-        System.out.println("Kiwi found: " + foundKiwi);
-
-        boolean foundApple = searchItem(fruit, "Apple");
-        System.out.println("Apple found: " + foundApple);
+    public void searchProductByName(String name) {
+        for (product product : inventory) {
+            if (product.getName().equalsIgnoreCase(name)) {
+                System.out.println("Product found:");
+                product.displayProductDetails();
+                return;
+            }
+        }
+        System.out.println("Product not found: " + name);
     }
 }
