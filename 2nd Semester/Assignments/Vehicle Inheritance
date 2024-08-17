@@ -1,0 +1,72 @@
+public class Vehicle {
+    protected String model;
+    protected int year;
+    protected String color;
+
+    public Vehicle(String model, int year, String color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+
+    public void displayDetails() {
+        System.out.println("Model: " + model + ", Year: " + year + ", Color: " + color);
+    }
+}
+
+class Car extends Vehicle {
+    private int numberOfDoors;
+
+    public Car(String model, int year, String color, int numberOfDoors) {
+        super(model, year, color);
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Number of Doors: " + numberOfDoors);
+    }
+}
+
+class Motorcycle extends Vehicle {
+    private double engineCapacity;
+
+    public Motorcycle(String model, int year, String color, double engineCapacity) {
+        super(model, year, color);
+        this.engineCapacity = engineCapacity;
+    }
+
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Engine Capacity: " + engineCapacity + " cc");
+    }
+}
+
+class Truck extends Vehicle {
+    private double loadCapacity;
+
+    public Truck(String model, int year, String color, double loadCapacity) {
+        super(model, year, color);
+        this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Load Capacity: " + loadCapacity + " tons");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Sedan", 2023, "Red", 4);
+        Motorcycle motorcycle = new Motorcycle("Sports Bike", 2022, "Black", 600);
+        Truck truck = new Truck("Pickup", 2021, "White", 2);
+
+        car.displayDetails();
+        motorcycle.displayDetails();
+        truck.displayDetails();
+    }
+}
