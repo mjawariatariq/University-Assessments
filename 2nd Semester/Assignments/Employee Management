@@ -1,0 +1,61 @@
+public class Employee {
+    protected String name;
+    protected int id;
+    protected double salary;
+
+    public Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+
+class Manager extends Employee {
+    private double bonus;
+
+    public Manager(String name, int id, double salary, double bonus) {
+        super(name, id, salary);
+        this.bonus = bonus;
+    }
+
+    @Override
+    public double getSalary() {
+        return super.getSalary() + bonus;
+    }
+}
+
+class Developer extends Employee {
+    private int projectsHandled;
+
+    public Developer(String name, int id, double salary, int projectsHandled) {
+        super(name, id, salary);
+        this.projectsHandled = projectsHandled;
+    }
+
+    // Add specific methods for Developer here
+}
+
+class Tester extends Employee {
+    // Add specific attributes and methods for Tester here
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee[] employees = {
+            new Manager("John Doe", 1, 50000, 10000),
+            new Developer("Jane Smith", 2, 45000, 3),
+            new Tester("Bob Johnson", 3, 38000)
+        };
+
+        double totalSalary = 0;
+        for (Employee employee : employees) {
+            totalSalary += employee.getSalary();
+        }
+
+        System.out.println("Total salary: " + totalSalary);
+    }
+}
