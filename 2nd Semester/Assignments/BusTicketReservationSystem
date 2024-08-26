@@ -1,0 +1,96 @@
+import java.time.LocalDate;
+
+class Bus {
+    private String routeNumber;
+    private int capacity;
+    private double ticketPrice;
+
+    public Bus(String routeNumber, int capacity, double ticketPrice) {
+        this.routeNumber = routeNumber;
+        this.capacity = capacity;
+        this.ticketPrice = ticketPrice;
+    }
+
+    public String getRouteNumber() {
+        return routeNumber;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public double getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void displayRouteDetails() {
+        System.out.println("Route Number: " + routeNumber);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Ticket Price: $" + ticketPrice);
+    }
+
+    public boolean bookTicket(int numberOfTickets) {
+        if (numberOfTickets <= capacity) {
+            capacity -= numberOfTickets;
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class Ticket {
+    private String passengerName;
+    private String routeNumber;
+    private LocalDate dateOfTravel;
+    private int numberOfTickets;
+    private double totalCost;
+
+    public Ticket(String passengerName, String routeNumber, LocalDate dateOfTravel, int numberOfTickets, double totalCost) {
+        this.passengerName = passengerName;
+        this.routeNumber = routeNumber;
+        this.dateOfTravel = dateOfTravel;
+        this.numberOfTickets = numberOfTickets;
+        this.totalCost = totalCost;
+    }
+
+    public void displayTicketDetails() {
+        System.out.println("Passenger Name: " + passengerName);
+        System.out.println("Route Number: " + routeNumber);
+        System.out.println("Date of Travel: " + dateOfTravel);
+        System.out.println("Number of Tickets: " + numberOfTickets);
+        System.out.println("Total Cost: $" + totalCost);
+    }
+}
+
+public class BusTicketReservationSystem {
+    public static void main(String[] args) {
+
+        Bus bus1 = new Bus("101", 40, 15.50);
+        Bus bus2 = new Bus("102", 30, 12.75);
+
+        System.out.println("Available Routes:");
+        bus1.displayRouteDetails();
+        System.out.println();
+        bus2.displayRouteDetails();
+        System.out.println();
+
+        int ticketsToBook = 5;
+        if (bus1.bookTicket(ticketsToBook)) {
+            Ticket ticket1 = new Ticket("Alice Johnson", bus1.getRouteNumber(), LocalDate.of(2024, 9, 10), ticketsToBook, bus1.getTicketPrice() * ticketsToBook);
+            ticket1.displayTicketDetails();
+        } else {
+            System.out.println("Booking failed. Not enough seats available.");
+        }
+
+        System.out.println();
+
+        ticketsToBook = 35;
+        if (bus2.bookTicket(ticketsToBook)) {
+            Ticket ticket2 = new Ticket("Bob Smith", bus2.getRouteNumber(), LocalDate.of(2024, 9, 15), ticketsToBook, bus2.getTicketPrice() * ticketsToBook);
+            ticket2.displayTicketDetails();
+        } else {
+            System.out.println("Booking failed. Not enough seats available.");
+        }
+    }
+}
