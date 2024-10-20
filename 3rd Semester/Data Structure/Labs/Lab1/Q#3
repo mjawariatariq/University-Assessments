@@ -1,0 +1,27 @@
+// Write C++ program to build simple calculator using switch case statement.
+
+#include<iostream>
+using namespace std;
+int main(){
+	char value; int num1 ; int num2;
+	cout<<"Enter first Number";
+	cin>>num1;
+	cout<<"Enter second Number";
+	cin>>num2;
+	cout<<"Enter your Operator";
+	cin>>value;
+	switch(value){
+		case'+' : cout<<"Addition:" << num1+num2;
+		break;
+		case'-' : cout<<"Subtraction:"<< num1-num2;
+		break;
+		case '*' : cout<<"Multiplication:"<<num1*num2;
+		break;
+		case '/' : cout<<"Division:"<<num1/num2;
+        break;
+        case '%' : cout<<"Reminder:"<<num1%num2;
+        break;
+        default: cout<<"Invalid Choice";
+	}
+return 0;
+	}
