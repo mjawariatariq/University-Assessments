@@ -1,0 +1,12 @@
+//Write C++ program to add two integer values and print the output with descriptive message.
+
+#include <iostream>
+using namespace std;
+
+	int int1 = 35;
+	int int2 = 24;
+int main(){
+	int sum = int1+int2;
+	cout<<sum<<endl;
+	return 0;
+}
