@@ -1,0 +1,9 @@
+USE School;
+
+CREATE TABLE St_info (
+    St_no nchar(10),
+    Adm_date DATE,
+    St_name TEXT,
+    St_age INT,
+    St_address TEXT
+);
