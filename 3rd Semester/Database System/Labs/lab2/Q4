@@ -1,0 +1,1 @@
+SELECT Name, R_Address, Salary FROM Employee;
