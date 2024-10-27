@@ -1,0 +1,3 @@
+USE Company;  
+
+CREATE TABLE Employee ( Emp_id VARCHAR(20) PRIMARY KEY, Name CHAR(20) NOT NULL, Age INT NOT NULL, R_Address VARCHAR(25), Salary FLOAT NOT NULL ); 
