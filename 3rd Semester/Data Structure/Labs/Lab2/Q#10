@@ -1,0 +1,22 @@
+//Write a C++ program to add two integer arrays and print the output array.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 5;
+    int arr1[SIZE] = {1, 2, 3, 4, 5};
+    int arr2[SIZE] = {6, 7, 8, 9, 10};
+    int sumArr[SIZE];
+
+    for(int i = 0; i < SIZE; i++) {
+        sumArr[i] = arr1[i] + arr2[i];
+    }
+
+    cout << "Sum of the two arrays:" << endl;
+    for(int i = 0; i < SIZE; i++) {
+        cout << sumArr[i] << "\t";
+    }
+
+    return 0;
+}
