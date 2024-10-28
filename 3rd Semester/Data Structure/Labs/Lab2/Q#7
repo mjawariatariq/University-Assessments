@@ -1,0 +1,28 @@
+//Write a C++ program to deletes ITEM from lOC given by user of the array. Print all elements of the array.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[6] = {22, 34, 21, 4, 3}; 
+    int loc;
+
+    cout << "Array Elements before Deletion:" << endl;
+    for(int i = 0; i < 5; i++) {
+        cout << arr[i] << "\t";
+    }
+
+    cout << "\nEnter location (0 to 4) to delete: ";
+    cin >> loc;
+
+    for(int i = loc; i < 5 - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    cout << "\nArray Elements after Deletion:" << endl;
+    for(int i = 0; i < 5 - 1; i++) { 
+        cout << arr[i] << "\t";
+    }
+
+    return 0;
+}
