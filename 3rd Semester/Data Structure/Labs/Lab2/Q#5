@@ -1,0 +1,23 @@
+//Write a C++ program to deletes ITEM from Top of the array. Print all elements of the array.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[6] = {22, 34, 21, 4, 3}; // Declare with extra space
+    cout << "Array Elements before Deletion:" << endl;
+    for(int i = 0; i < 5; i++) {
+        cout << arr[i] << "\t";
+    }
+
+    for(int i = 0; i < 5 - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    
+    cout << "\nArray Elements after Deletion from Top:" << endl;
+    for(int i = 0; i < 5 - 1; i++) { // Print the updated array (one less element)
+        cout << arr[i] << "\t";
+    }
+
+    return 0;
+}
