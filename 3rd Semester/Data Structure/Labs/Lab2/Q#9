@@ -1,0 +1,32 @@
+//Write a C++ program to updates an element at the given index.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {22, 34, 21, 4, 3};
+    int index, newValue;
+
+    cout << "Array Elements before Update:" << endl;
+    for(int i = 0; i < 5; i++) {
+        cout << arr[i] << "\t";
+    }
+
+    cout << "\nEnter index (0 to 4) to update: ";
+    cin >> index;
+
+    if (index >= 0 && index < 5) {
+        cout << "Enter new value: ";
+        cin >> newValue;
+        arr[index] = newValue; // Update the value at the specified index
+    } else {
+        cout << "Invalid index!" << endl;
+    }
+
+    cout << "\nArray Elements after Update:" << endl;
+    for(int i = 0; i < 5; i++) {
+        cout << arr[i] << "\t";
+    }
+
+    return 0;
+}
