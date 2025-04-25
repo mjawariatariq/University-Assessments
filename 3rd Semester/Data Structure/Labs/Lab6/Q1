@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+void insertAtBeginning(Node*& head, int newData) {
+    Node* newNode = new Node{newData, nullptr, head};
+
+    if (head != nullptr)
+        head->prev = newNode;
+
+    head = newNode;
+}
+
+void display(Node* head) {
+    while (head) {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    Node* head = nullptr;
+    insertAtBeginning(head, 10);
+    insertAtBeginning(head, 20);
+    insertAtBeginning(head, 30);
+
+    cout << "List after insertion at beginning: ";
+    display(head);
+
+    return 0;
+}
