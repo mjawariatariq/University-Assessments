@@ -1,0 +1,5 @@
+def student_info(name, age, subject):
+    return {'name': name, 'age': age, 'subject': subject}
+
+info = student_info("John", 20, "Math")
+print(info)
