@@ -1,0 +1,4 @@
+def greet():
+    print("Hello, welcome to Python Lab!")
+
+greet()  # Call the function
