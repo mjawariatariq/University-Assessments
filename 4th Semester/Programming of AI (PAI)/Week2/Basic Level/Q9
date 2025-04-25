@@ -1,0 +1,3 @@
+sentence = "The weather is bad today"
+sentence = sentence.replace('bad', 'good').split()
+print(sentence)
