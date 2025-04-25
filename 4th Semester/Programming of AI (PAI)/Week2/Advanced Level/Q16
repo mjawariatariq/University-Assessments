@@ -1,0 +1,4 @@
+students = ['Ahmed', 'Alice', 'Bob', 'Annie', 'Alex']
+for student in students:
+    if student.startswith('A'):
+        print(student.upper())
