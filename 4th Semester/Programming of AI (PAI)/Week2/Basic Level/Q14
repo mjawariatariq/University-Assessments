@@ -1,0 +1,5 @@
+def sum_of_numbers(numbers):
+    print(sum(numbers))
+
+numbers = [1, 2, 3, 4, 5]
+sum_of_numbers(numbers)
