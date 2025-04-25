@@ -1,0 +1,5 @@
+list1 = [10, 20, 30]
+list2 = [5, 15, 25]
+merged_list = list1 + list2
+merged_list.sort(reverse=True)
+print(merged_list)
