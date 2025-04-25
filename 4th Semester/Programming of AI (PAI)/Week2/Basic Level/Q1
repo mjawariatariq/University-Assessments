@@ -1,0 +1,2 @@
+fruits = ['Apple', 'Banana', 'Orange', 'Grapes', 'Mango']
+print(fruits[2])  # Print the third fruit (index 2)
