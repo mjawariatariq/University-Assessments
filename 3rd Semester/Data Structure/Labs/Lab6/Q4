@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+void deleteNode(Node*& head, int key) {
+    Node* current = head;
+
+    while (current && current->data != key)
+        current = current->next;
+
+    if (!current) {
+        cout << "Node not found!" << endl;
+        return;
+    }
+
+    if (current->prev)
+        current->prev->next = current->next;
+    else
+        head = current->next;
+
+    if (current->next)
+        current->next->prev = current->prev;
+
+    delete current;
+}
+
+void display(Node* head) {
+    while (head) {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    Node* head = new Node{10, nullptr, nullptr};
+    head->next = new Node{20, head, nullptr};
+    head->next->next = new Node{30, head->next, nullptr};
+
+    deleteNode(head, 20);
+
+    cout << "List after deletion: ";
+    display(head);
+
+    return 0;
+}
