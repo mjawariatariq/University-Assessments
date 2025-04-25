@@ -1,0 +1,3 @@
+text = "  HeLLo WoRLd   "
+text = text.strip().lower()  # Remove spaces and convert to lowercase
+print(text)
