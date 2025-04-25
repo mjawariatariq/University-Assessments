@@ -1,0 +1,15 @@
+def calculate_average(marks):
+    avg = sum(marks) / len(marks)
+    if avg >= 90:
+        grade = 'A'
+    elif avg >= 75:
+        grade = 'B'
+    elif avg >= 50:
+        grade = 'C'
+    else:
+        grade = 'F'
+    return avg, grade
+
+marks = [int(input(f"Enter mark for subject {i+1}: ")) for i in range(3)]
+avg, grade = calculate_average(marks)
+print(f"Average Marks: {avg}, Grade: {grade}")
