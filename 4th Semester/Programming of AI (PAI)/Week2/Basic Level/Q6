@@ -1,0 +1,3 @@
+students = ['Ahmed', 'Sarah', 'John', 'Alice']
+students[1] = 'Ali'  # Change the second name to "Ali"
+print(students)
