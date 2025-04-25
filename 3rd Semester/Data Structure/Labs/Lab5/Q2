@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+void insertAtBeginning(Node*& head, int newData) {
+    Node* newNode = new Node{newData, head};
+    head = newNode;
+}
+
+int main() {
+    Node* head = nullptr;
+    insertAtBeginning(head, 10);
+    insertAtBeginning(head, 20);
+
+    Node* temp = head;
+    cout << "Linked List: ";
+    while (temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+    return 0;
+}
