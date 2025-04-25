@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string text = "This is a bad example.";
+    string toReplace = "bad";
+    string replaceWith = "good";
+
+    size_t pos = text.find(toReplace);
+    if (pos != string::npos) {
+        text.replace(pos, toReplace.length(), replaceWith);
+    }
+
+    cout << "Updated text: " << text << endl;
+
+    return 0;
+}
