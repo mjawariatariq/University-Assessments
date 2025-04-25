@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int countNodes(Node* head) {
+    int count = 0;
+    while (head != nullptr) {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+int main() {
+    Node* head = new Node{1, new Node{2, new Node{3, nullptr}}};
+
+    int num = countNodes(head);
+    cout << "Number of elements in the linked list: " << num << endl;
+
+    return 0;
+}
