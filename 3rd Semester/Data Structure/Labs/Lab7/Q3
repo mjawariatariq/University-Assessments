@@ -1,0 +1,51 @@
+#include <iostream>
+#include <stack>
+#include <cctype>
+using namespace std;
+
+int precedence(char op) {
+    if (op == '^') return 3;
+    else if (op == '*' || op == '/') return 2;
+    else if (op == '+' || op == '-') return 1;
+    else return -1;
+}
+
+string infixToPostfix(string infix) {
+    stack<char> st;
+    string postfix = "";
+
+    for (char ch : infix) {
+        if (isalnum(ch)) {
+            postfix += ch;  // operand
+        } else if (ch == '(') {
+            st.push(ch);
+        } else if (ch == ')') {
+            while (!st.empty() && st.top() != '(') {
+                postfix += st.top();
+                st.pop();
+            }
+            st.pop(); // remove '('
+        } else {  // operator
+            while (!st.empty() && precedence(st.top()) >= precedence(ch)) {
+                postfix += st.top();
+                st.pop();
+            }
+            st.push(ch);
+        }
+    }
+
+    while (!st.empty()) {
+        postfix += st.top();
+        st.pop();
+    }
+
+    return postfix;
+}
+
+int main() {
+    string infix = "a+b*(c^d-e)^(f+g*h)-i";
+    string postfix = infixToPostfix(infix);
+
+    cout << "Postfix expression: " << postfix << endl;
+    return 0;
+}
