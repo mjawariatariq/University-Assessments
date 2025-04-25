@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+void insertBefore(Node*& head, int key, int newData) {
+    Node* current = head;
+
+    while (current && current->data != key) {
+        current = current->next;
+    }
+
+    if (!current) {
+        cout << "Node not found!" << endl;
+        return;
+    }
+
+    Node* newNode = new Node{newData, current->prev, current};
+    if (current->prev)
+        current->prev->next = newNode;
+    else
+        head = newNode;
+
+    current->prev = newNode;
+}
+
+void display(Node* head) {
+    while (head) {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    Node* head = new Node{10, nullptr, nullptr};
+    head->next = new Node{20, head, nullptr};
+
+    insertBefore(head, 20, 15);
+
+    cout << "List after insertion before 20: ";
+    display(head);
+
+    return 0;
+}
