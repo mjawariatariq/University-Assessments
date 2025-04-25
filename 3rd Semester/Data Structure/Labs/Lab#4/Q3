@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string text = "This is a boring lecture.";
+    string toDelete = "boring ";
+
+    size_t pos = text.find(toDelete);
+    if (pos != string::npos) {
+        text.erase(pos, toDelete.length());
+    }
+
+    cout << "Text after deletion: " << text << endl;
+
+    return 0;
+}
