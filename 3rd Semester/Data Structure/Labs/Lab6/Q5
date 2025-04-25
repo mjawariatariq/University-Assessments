@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+void displayReverse(Node* head) {
+    if (!head) return;
+
+    while (head->next)
+        head = head->next;
+
+    while (head) {
+        cout << head->data << " ";
+        head = head->prev;
+    }
+    cout << endl;
+}
+
+int main() {
+    Node* head = new Node{10, nullptr, nullptr};
+    head->next = new Node{20, head, nullptr};
+    head->next->next = new Node{30, head->next, nullptr};
+
+    cout << "Reverse Linked List: ";
+    displayReverse(head);
+
+    return 0;
+}
