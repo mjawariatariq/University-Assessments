@@ -1,0 +1,3 @@
+person = ('John', 25, 'New York')
+name, age, city = person
+print(f"Name: {name}, Age: {age}, City: {city}")
