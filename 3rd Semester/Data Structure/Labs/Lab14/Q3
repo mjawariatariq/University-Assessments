@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+// Define the structure of the node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+    
+    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+};
+
+// Function to insert a node into the BST
+Node* insert(Node* root, int val) {
+    if (root == nullptr) {
+        return new Node(val);
+    }
+    
+    if (val < root->data) {
+        root->left = insert(root->left, val);
+    } else {
+        root->right = insert(root->right, val);
+    }
+    return root;
+}
+
+// Recursive function to search for a key in the BST
+bool searchRecursive(Node* root, int key) {
+    if (root == nullptr) {
+        return false;
+    }
+    
+    if (root->data == key) {
+        return true;
+    } else if (key < root->data) {
+        return searchRecursive(root->left, key);
+    } else {
+        return searchRecursive(root->right, key);
+    }
+}
+
+// Non-recursive function to search for a key in the BST
+bool searchNonRecursive(Node* root, int key) {
+    while (root != nullptr) {
+        if (root->data == key) {
+            return true;
+        } else if (key < root->data) {
+            root = root->left;
+        } else {
+            root = root->right;
+        }
+    }
+    return false;
+}
+
+int main() {
+    Node* root = nullptr;
+    
+    // Inserting nodes into the BST
+    root = insert(root, 50);
+    insert(root, 30);
+    insert(root, 20);
+    insert(root, 40);
+    insert(root, 70);
+    insert(root, 60);
+    insert(root, 80);
+    
+    int key = 40;
+    
+    // Searching recursively
+    if (searchRecursive(root, key)) {
+        cout << "Found " << key << " using recursive search." << endl;
+    } else {
+        cout << "Did not find " << key << " using recursive search." << endl;
+    }
+    
+    // Searching non-recursively
+    if (searchNonRecursive(root, key)) {
+        cout << "Found " << key << " using non-recursive search." << endl;
+    } else {
+        cout << "Did not find " << key << " using non-recursive search." << endl;
+    }
+    
+    return 0;
+}
