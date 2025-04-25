@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+void insertAtPosition(Node*& head, int position, int newData) {
+    Node* newNode = new Node{newData, nullptr};
+
+    if (position == 1) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
+    Node* temp = head;
+    for (int i = 1; i < position - 1 && temp != nullptr; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == nullptr) {
+        cout << "Position out of bounds" << endl;
+        return;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+int main() {
+    Node* head = new Node{1, new Node{2, new Node{4, nullptr}}};
+
+    insertAtPosition(head, 3, 3); // Insert 3 at position 3
+
+    Node* temp = head;
+    cout << "Linked List: ";
+    while (temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+    return 0;
+}
