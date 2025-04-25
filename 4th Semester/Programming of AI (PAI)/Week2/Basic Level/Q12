@@ -1,0 +1,6 @@
+age = int(input("Enter your age: "))
+is_student = input("Are you a student (yes/no): ").lower() == 'yes'
+if age > 18 and is_student:
+    print("Eligible")
+else:
+    print("Not eligible")
