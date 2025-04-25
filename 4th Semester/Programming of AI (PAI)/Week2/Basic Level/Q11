@@ -1,0 +1,4 @@
+student = {'name': 'John', 'age': 21}
+student['grade'] = 'A'  
+student['age'] = 22  
+print(student)
