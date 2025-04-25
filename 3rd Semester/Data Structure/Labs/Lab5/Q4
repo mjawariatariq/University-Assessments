@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int findLastNodeLocation(Node* head) {
+    int loc = 1;
+    while (head && head->next) {
+        head = head->next;
+        loc++;
+    }
+    return loc;
+}
+
+int main() {
+    Node* head = new Node{1, new Node{3, new Node{5, new Node{7, nullptr}}}};
+
+    int location = findLastNodeLocation(head);
+    cout << "Location of last node: " << location << endl;
+
+    return 0;
+}
